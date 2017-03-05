@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87C28274F1AA382FE3B4C016 /* Pods_snakattack2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBE2234A689F026463D5A5E4 /* Pods_snakattack2.framework */; };
 		AC303BB81E69415F00D76D25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC303BB71E69415F00D76D25 /* AppDelegate.swift */; };
 		AC303BBA1E69415F00D76D25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC303BB91E69415F00D76D25 /* ViewController.swift */; };
 		AC303BBD1E69415F00D76D25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC303BBB1E69415F00D76D25 /* Main.storyboard */; };
 		AC303BC01E69415F00D76D25 /* snakattack2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC303BBE1E69415F00D76D25 /* snakattack2.xcdatamodeld */; };
 		AC303BC21E69416000D76D25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC303BC11E69416000D76D25 /* Assets.xcassets */; };
 		AC303BC51E69416000D76D25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC303BC31E69416000D76D25 /* LaunchScreen.storyboard */; };
+		AC303BCD1E69436D00D76D25 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC303BCC1E69436D00D76D25 /* TesseractOCR.framework */; };
+		AC303BCF1E69465C00D76D25 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = AC303BCE1E69465C00D76D25 /* tessdata */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		77ED6FF4A44960871C05B38C /* Pods-snakattack2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snakattack2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-snakattack2/Pods-snakattack2.debug.xcconfig"; sourceTree = "<group>"; };
 		AC303BB41E69415F00D76D25 /* snakattack2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = snakattack2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC303BB71E69415F00D76D25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC303BB91E69415F00D76D25 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +28,10 @@
 		AC303BC11E69416000D76D25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC303BC41E69416000D76D25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC303BC61E69416000D76D25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC303BCC1E69436D00D76D25 /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TesseractOCR.framework; path = "../../../Library/Developer/Xcode/DerivedData/snakattack2-ektkrokptdiajcfwudmdphbtedbq/Build/Products/Debug-iphonesimulator/TesseractOCRiOS/TesseractOCR.framework"; sourceTree = "<group>"; };
+		AC303BCE1E69465C00D76D25 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		C4EA435E4AD261855005D263 /* Pods-snakattack2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snakattack2.release.xcconfig"; path = "Pods/Target Support Files/Pods-snakattack2/Pods-snakattack2.release.xcconfig"; sourceTree = "<group>"; };
+		EBE2234A689F026463D5A5E4 /* Pods_snakattack2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snakattack2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +39,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC303BCD1E69436D00D76D25 /* TesseractOCR.framework in Frameworks */,
+				87C28274F1AA382FE3B4C016 /* Pods_snakattack2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		484F6B3252317A0CCAA5FAF0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC303BCC1E69436D00D76D25 /* TesseractOCR.framework */,
+				EBE2234A689F026463D5A5E4 /* Pods_snakattack2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		563613BEE612B196C428EA8E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				77ED6FF4A44960871C05B38C /* Pods-snakattack2.debug.xcconfig */,
+				C4EA435E4AD261855005D263 /* Pods-snakattack2.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AC303BAB1E69415F00D76D25 = {
 			isa = PBXGroup;
 			children = (
 				AC303BB61E69415F00D76D25 /* snakattack2 */,
 				AC303BB51E69415F00D76D25 /* Products */,
+				563613BEE612B196C428EA8E /* Pods */,
+				484F6B3252317A0CCAA5FAF0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				AC303BB71E69415F00D76D25 /* AppDelegate.swift */,
+				AC303BCE1E69465C00D76D25 /* tessdata */,
 				AC303BB91E69415F00D76D25 /* ViewController.swift */,
 				AC303BBB1E69415F00D76D25 /* Main.storyboard */,
 				AC303BC11E69416000D76D25 /* Assets.xcassets */,
@@ -74,9 +105,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AC303BC91E69416000D76D25 /* Build configuration list for PBXNativeTarget "snakattack2" */;
 			buildPhases = (
+				7F73BEABB1033D32E488D061 /* [CP] Check Pods Manifest.lock */,
 				AC303BB01E69415F00D76D25 /* Sources */,
 				AC303BB11E69415F00D76D25 /* Frameworks */,
 				AC303BB21E69415F00D76D25 /* Resources */,
+				06DF0CF2DB6778134E5010F5 /* [CP] Embed Pods Frameworks */,
+				2053D6944C8D60E10CFBB33F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -127,12 +161,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC303BC51E69416000D76D25 /* LaunchScreen.storyboard in Resources */,
+				AC303BCF1E69465C00D76D25 /* tessdata in Resources */,
 				AC303BC21E69416000D76D25 /* Assets.xcassets in Resources */,
 				AC303BBD1E69415F00D76D25 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		06DF0CF2DB6778134E5010F5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-snakattack2/Pods-snakattack2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2053D6944C8D60E10CFBB33F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-snakattack2/Pods-snakattack2-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F73BEABB1033D32E488D061 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AC303BB01E69415F00D76D25 /* Sources */ = {
@@ -262,8 +345,10 @@
 		};
 		AC303BCA1E69416000D76D25 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77ED6FF4A44960871C05B38C /* Pods-snakattack2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = snakattack2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = b2nw.snakattack2;
@@ -274,8 +359,10 @@
 		};
 		AC303BCB1E69416000D76D25 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4EA435E4AD261855005D263 /* Pods-snakattack2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = snakattack2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = b2nw.snakattack2;
@@ -303,6 +390,7 @@
 				AC303BCB1E69416000D76D25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

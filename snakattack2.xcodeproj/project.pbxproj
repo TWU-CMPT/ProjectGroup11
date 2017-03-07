@@ -1,0 +1,411 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		87C28274F1AA382FE3B4C016 /* Pods_snakattack2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBE2234A689F026463D5A5E4 /* Pods_snakattack2.framework */; };
+		AC303BB81E69415F00D76D25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC303BB71E69415F00D76D25 /* AppDelegate.swift */; };
+		AC303BBA1E69415F00D76D25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC303BB91E69415F00D76D25 /* ViewController.swift */; };
+		AC303BBD1E69415F00D76D25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC303BBB1E69415F00D76D25 /* Main.storyboard */; };
+		AC303BC01E69415F00D76D25 /* snakattack2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC303BBE1E69415F00D76D25 /* snakattack2.xcdatamodeld */; };
+		AC303BC21E69416000D76D25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC303BC11E69416000D76D25 /* Assets.xcassets */; };
+		AC303BC51E69416000D76D25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC303BC31E69416000D76D25 /* LaunchScreen.storyboard */; };
+		AC303BCD1E69436D00D76D25 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC303BCC1E69436D00D76D25 /* TesseractOCR.framework */; };
+		AC303BCF1E69465C00D76D25 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = AC303BCE1E69465C00D76D25 /* tessdata */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		77ED6FF4A44960871C05B38C /* Pods-snakattack2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snakattack2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-snakattack2/Pods-snakattack2.debug.xcconfig"; sourceTree = "<group>"; };
+		AC303BB41E69415F00D76D25 /* snakattack2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = snakattack2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC303BB71E69415F00D76D25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AC303BB91E69415F00D76D25 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AC303BBC1E69415F00D76D25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AC303BBF1E69415F00D76D25 /* snakattack2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = snakattack2.xcdatamodel; sourceTree = "<group>"; };
+		AC303BC11E69416000D76D25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AC303BC41E69416000D76D25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AC303BC61E69416000D76D25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC303BCC1E69436D00D76D25 /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TesseractOCR.framework; path = "../../../Library/Developer/Xcode/DerivedData/snakattack2-ektkrokptdiajcfwudmdphbtedbq/Build/Products/Debug-iphonesimulator/TesseractOCRiOS/TesseractOCR.framework"; sourceTree = "<group>"; };
+		AC303BCE1E69465C00D76D25 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		C4EA435E4AD261855005D263 /* Pods-snakattack2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snakattack2.release.xcconfig"; path = "Pods/Target Support Files/Pods-snakattack2/Pods-snakattack2.release.xcconfig"; sourceTree = "<group>"; };
+		EBE2234A689F026463D5A5E4 /* Pods_snakattack2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snakattack2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AC303BB11E69415F00D76D25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC303BCD1E69436D00D76D25 /* TesseractOCR.framework in Frameworks */,
+				87C28274F1AA382FE3B4C016 /* Pods_snakattack2.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		484F6B3252317A0CCAA5FAF0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC303BCC1E69436D00D76D25 /* TesseractOCR.framework */,
+				EBE2234A689F026463D5A5E4 /* Pods_snakattack2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		563613BEE612B196C428EA8E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				77ED6FF4A44960871C05B38C /* Pods-snakattack2.debug.xcconfig */,
+				C4EA435E4AD261855005D263 /* Pods-snakattack2.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AC303BAB1E69415F00D76D25 = {
+			isa = PBXGroup;
+			children = (
+				AC303BB61E69415F00D76D25 /* snakattack2 */,
+				AC303BB51E69415F00D76D25 /* Products */,
+				563613BEE612B196C428EA8E /* Pods */,
+				484F6B3252317A0CCAA5FAF0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AC303BB51E69415F00D76D25 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC303BB41E69415F00D76D25 /* snakattack2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC303BB61E69415F00D76D25 /* snakattack2 */ = {
+			isa = PBXGroup;
+			children = (
+				AC303BB71E69415F00D76D25 /* AppDelegate.swift */,
+				AC303BCE1E69465C00D76D25 /* tessdata */,
+				AC303BB91E69415F00D76D25 /* ViewController.swift */,
+				AC303BBB1E69415F00D76D25 /* Main.storyboard */,
+				AC303BC11E69416000D76D25 /* Assets.xcassets */,
+				AC303BC31E69416000D76D25 /* LaunchScreen.storyboard */,
+				AC303BC61E69416000D76D25 /* Info.plist */,
+				AC303BBE1E69415F00D76D25 /* snakattack2.xcdatamodeld */,
+			);
+			path = snakattack2;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AC303BB31E69415F00D76D25 /* snakattack2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC303BC91E69416000D76D25 /* Build configuration list for PBXNativeTarget "snakattack2" */;
+			buildPhases = (
+				7F73BEABB1033D32E488D061 /* [CP] Check Pods Manifest.lock */,
+				AC303BB01E69415F00D76D25 /* Sources */,
+				AC303BB11E69415F00D76D25 /* Frameworks */,
+				AC303BB21E69415F00D76D25 /* Resources */,
+				06DF0CF2DB6778134E5010F5 /* [CP] Embed Pods Frameworks */,
+				2053D6944C8D60E10CFBB33F /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = snakattack2;
+			productName = snakattack2;
+			productReference = AC303BB41E69415F00D76D25 /* snakattack2.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AC303BAC1E69415F00D76D25 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "CMPT276-Group11";
+				TargetAttributes = {
+					AC303BB31E69415F00D76D25 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = AC303BAF1E69415F00D76D25 /* Build configuration list for PBXProject "snakattack2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AC303BAB1E69415F00D76D25;
+			productRefGroup = AC303BB51E69415F00D76D25 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AC303BB31E69415F00D76D25 /* snakattack2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AC303BB21E69415F00D76D25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC303BC51E69416000D76D25 /* LaunchScreen.storyboard in Resources */,
+				AC303BCF1E69465C00D76D25 /* tessdata in Resources */,
+				AC303BC21E69416000D76D25 /* Assets.xcassets in Resources */,
+				AC303BBD1E69415F00D76D25 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		06DF0CF2DB6778134E5010F5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-snakattack2/Pods-snakattack2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2053D6944C8D60E10CFBB33F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-snakattack2/Pods-snakattack2-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F73BEABB1033D32E488D061 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AC303BB01E69415F00D76D25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC303BC01E69415F00D76D25 /* snakattack2.xcdatamodeld in Sources */,
+				AC303BBA1E69415F00D76D25 /* ViewController.swift in Sources */,
+				AC303BB81E69415F00D76D25 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AC303BBB1E69415F00D76D25 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC303BBC1E69415F00D76D25 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AC303BC31E69416000D76D25 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC303BC41E69416000D76D25 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AC303BC71E69416000D76D25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AC303BC81E69416000D76D25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AC303BCA1E69416000D76D25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77ED6FF4A44960871C05B38C /* Pods-snakattack2.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = snakattack2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = b2nw.snakattack2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		AC303BCB1E69416000D76D25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4EA435E4AD261855005D263 /* Pods-snakattack2.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = snakattack2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = b2nw.snakattack2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AC303BAF1E69415F00D76D25 /* Build configuration list for PBXProject "snakattack2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC303BC71E69416000D76D25 /* Debug */,
+				AC303BC81E69416000D76D25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC303BC91E69416000D76D25 /* Build configuration list for PBXNativeTarget "snakattack2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC303BCA1E69416000D76D25 /* Debug */,
+				AC303BCB1E69416000D76D25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AC303BBE1E69415F00D76D25 /* snakattack2.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AC303BBF1E69415F00D76D25 /* snakattack2.xcdatamodel */,
+			);
+			currentVersion = AC303BBF1E69415F00D76D25 /* snakattack2.xcdatamodel */;
+			path = snakattack2.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = AC303BAC1E69415F00D76D25 /* Project object */;
+}

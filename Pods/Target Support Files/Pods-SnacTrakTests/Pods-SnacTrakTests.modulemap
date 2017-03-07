@@ -1,0 +1,6 @@
+framework module Pods_SnacTrakTests {
+  umbrella header "Pods-SnacTrakTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,799 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		061907CD1F25CB60E56C06E2 /* Pods_SnacTrak.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CC74676F28AAD6F880E49E /* Pods_SnacTrak.framework */; };
+		1FB18C5D3C7FCC557DCD2BB2 /* Pods_SnacTrakUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB17AE14E3060B9359A81D4 /* Pods_SnacTrakUITests.framework */; };
+		770739F2B61FE84A75AAA084 /* Pods_SnacTrakTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9346E0FF2DEEC3F55F5D43 /* Pods_SnacTrakTests.framework */; };
+		D31B87481E6CF22D00EE6F34 /* AddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B87471E6CF22D00EE6F34 /* AddVC.swift */; };
+		D31B874A1E6CF4C400EE6F34 /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B87491E6CF4C400EE6F34 /* FoodItem.swift */; };
+		D31B874F1E6CF51A00EE6F34 /* Nutrient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B874E1E6CF51A00EE6F34 /* Nutrient.swift */; };
+		D31B87551E6CFAEE00EE6F34 /* ScannedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B87541E6CFAEE00EE6F34 /* ScannedText.swift */; };
+		D33E7E431E6A99ED00EDFF87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E7E421E6A99ED00EDFF87 /* AppDelegate.swift */; };
+		D33E7E451E6A99ED00EDFF87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E7E441E6A99ED00EDFF87 /* ViewController.swift */; };
+		D33E7E481E6A99ED00EDFF87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D33E7E461E6A99ED00EDFF87 /* Main.storyboard */; };
+		D33E7E4B1E6A99ED00EDFF87 /* SnacTrak.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D33E7E491E6A99ED00EDFF87 /* SnacTrak.xcdatamodeld */; };
+		D33E7E4D1E6A99ED00EDFF87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33E7E4C1E6A99ED00EDFF87 /* Assets.xcassets */; };
+		D33E7E5B1E6A99ED00EDFF87 /* SnacTrakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E7E5A1E6A99ED00EDFF87 /* SnacTrakTests.swift */; };
+		D33E7E661E6A99ED00EDFF87 /* SnacTrakUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E7E651E6A99ED00EDFF87 /* SnacTrakUITests.swift */; };
+		D35BA1C01E6E2D4600386844 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = D35BA1BF1E6E2D4600386844 /* tessdata */; };
+		D3AA98AD1E6D215A009D81C9 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AA98AC1E6D215A009D81C9 /* HomeVC.swift */; };
+		D3AA98AF1E6D6936009D81C9 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AA98AE1E6D6936009D81C9 /* DetailsVC.swift */; };
+		D3F150711E6AA1F2004AE54E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3F150701E6AA1F2004AE54E /* GoogleService-Info.plist */; };
+		D3F150721E6AA1F2004AE54E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3F150701E6AA1F2004AE54E /* GoogleService-Info.plist */; };
+		D3F150731E6AA1F2004AE54E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3F150701E6AA1F2004AE54E /* GoogleService-Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D33E7E571E6A99ED00EDFF87 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D33E7E371E6A99ED00EDFF87 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D33E7E3E1E6A99ED00EDFF87;
+			remoteInfo = SnacTrak;
+		};
+		D33E7E621E6A99ED00EDFF87 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D33E7E371E6A99ED00EDFF87 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D33E7E3E1E6A99ED00EDFF87;
+			remoteInfo = SnacTrak;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1F9346E0FF2DEEC3F55F5D43 /* Pods_SnacTrakTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnacTrakTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		28FE6CBFDDC1AD21CD86E23A /* Pods-SnacTrakTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnacTrakTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnacTrakTests/Pods-SnacTrakTests.release.xcconfig"; sourceTree = "<group>"; };
+		2ACE645D2F05D109AA972F76 /* Pods-SnacTrakTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnacTrakTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnacTrakTests/Pods-SnacTrakTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4D7F79A23817DF2C64FAF690 /* Pods-SnacTrak.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnacTrak.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnacTrak/Pods-SnacTrak.release.xcconfig"; sourceTree = "<group>"; };
+		6DB17AE14E3060B9359A81D4 /* Pods_SnacTrakUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnacTrakUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		79CC74676F28AAD6F880E49E /* Pods_SnacTrak.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnacTrak.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F21C912FBE3C9806B23D0DE /* Pods-SnacTrakUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnacTrakUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnacTrakUITests/Pods-SnacTrakUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C55614BC0273A3A1EEE331A6 /* Pods-SnacTrak.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnacTrak.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnacTrak/Pods-SnacTrak.debug.xcconfig"; sourceTree = "<group>"; };
+		CAB9BBF53FAE35523F15FC50 /* Pods-SnacTrakUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnacTrakUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnacTrakUITests/Pods-SnacTrakUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D31B87471E6CF22D00EE6F34 /* AddVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddVC.swift; sourceTree = "<group>"; };
+		D31B87491E6CF4C400EE6F34 /* FoodItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
+		D31B874E1E6CF51A00EE6F34 /* Nutrient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nutrient.swift; sourceTree = "<group>"; };
+		D31B87541E6CFAEE00EE6F34 /* ScannedText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannedText.swift; sourceTree = "<group>"; };
+		D33E7E3F1E6A99ED00EDFF87 /* SnacTrak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnacTrak.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D33E7E421E6A99ED00EDFF87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D33E7E441E6A99ED00EDFF87 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D33E7E471E6A99ED00EDFF87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D33E7E4A1E6A99ED00EDFF87 /* SnacTrak.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SnacTrak.xcdatamodel; sourceTree = "<group>"; };
+		D33E7E4C1E6A99ED00EDFF87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D33E7E511E6A99ED00EDFF87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D33E7E561E6A99ED00EDFF87 /* SnacTrakTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnacTrakTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D33E7E5A1E6A99ED00EDFF87 /* SnacTrakTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnacTrakTests.swift; sourceTree = "<group>"; };
+		D33E7E5C1E6A99ED00EDFF87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D33E7E611E6A99ED00EDFF87 /* SnacTrakUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnacTrakUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D33E7E651E6A99ED00EDFF87 /* SnacTrakUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnacTrakUITests.swift; sourceTree = "<group>"; };
+		D33E7E671E6A99ED00EDFF87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D35BA1BF1E6E2D4600386844 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		D3AA98AC1E6D215A009D81C9 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		D3AA98AE1E6D6936009D81C9 /* DetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
+		D3F150701E6AA1F2004AE54E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D3F150741E6AA366004AE54E /* SnacTrak-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SnacTrak-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D33E7E3C1E6A99ED00EDFF87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				061907CD1F25CB60E56C06E2 /* Pods_SnacTrak.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D33E7E531E6A99ED00EDFF87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				770739F2B61FE84A75AAA084 /* Pods_SnacTrakTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D33E7E5E1E6A99ED00EDFF87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FB18C5D3C7FCC557DCD2BB2 /* Pods_SnacTrakUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		40F5C000336B0B274144C112 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C55614BC0273A3A1EEE331A6 /* Pods-SnacTrak.debug.xcconfig */,
+				4D7F79A23817DF2C64FAF690 /* Pods-SnacTrak.release.xcconfig */,
+				2ACE645D2F05D109AA972F76 /* Pods-SnacTrakTests.debug.xcconfig */,
+				28FE6CBFDDC1AD21CD86E23A /* Pods-SnacTrakTests.release.xcconfig */,
+				CAB9BBF53FAE35523F15FC50 /* Pods-SnacTrakUITests.debug.xcconfig */,
+				9F21C912FBE3C9806B23D0DE /* Pods-SnacTrakUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D31B87521E6CF58500EE6F34 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D31B87541E6CFAEE00EE6F34 /* ScannedText.swift */,
+				D31B87491E6CF4C400EE6F34 /* FoodItem.swift */,
+				D31B874E1E6CF51A00EE6F34 /* Nutrient.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		D31B87531E6CF65C00EE6F34 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				D33E7E511E6A99ED00EDFF87 /* Info.plist */,
+				D3F150701E6AA1F2004AE54E /* GoogleService-Info.plist */,
+				D33E7E491E6A99ED00EDFF87 /* SnacTrak.xcdatamodeld */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		D33E7E361E6A99ED00EDFF87 = {
+			isa = PBXGroup;
+			children = (
+				D33E7E411E6A99ED00EDFF87 /* SnacTrak */,
+				D33E7E591E6A99ED00EDFF87 /* SnacTrakTests */,
+				D33E7E641E6A99ED00EDFF87 /* SnacTrakUITests */,
+				D33E7E401E6A99ED00EDFF87 /* Products */,
+				40F5C000336B0B274144C112 /* Pods */,
+				EAE3AA6051AE08FAAF16973A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D33E7E401E6A99ED00EDFF87 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D33E7E3F1E6A99ED00EDFF87 /* SnacTrak.app */,
+				D33E7E561E6A99ED00EDFF87 /* SnacTrakTests.xctest */,
+				D33E7E611E6A99ED00EDFF87 /* SnacTrakUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D33E7E411E6A99ED00EDFF87 /* SnacTrak */ = {
+			isa = PBXGroup;
+			children = (
+				D33E7E421E6A99ED00EDFF87 /* AppDelegate.swift */,
+				D33E7E441E6A99ED00EDFF87 /* ViewController.swift */,
+				D3AA98AC1E6D215A009D81C9 /* HomeVC.swift */,
+				D31B87471E6CF22D00EE6F34 /* AddVC.swift */,
+				D3AA98AE1E6D6936009D81C9 /* DetailsVC.swift */,
+				D33E7E461E6A99ED00EDFF87 /* Main.storyboard */,
+				D3F150741E6AA366004AE54E /* SnacTrak-Bridging-Header.h */,
+				D35BA1BF1E6E2D4600386844 /* tessdata */,
+				D33E7E4C1E6A99ED00EDFF87 /* Assets.xcassets */,
+				D31B87521E6CF58500EE6F34 /* Classes */,
+				D31B87531E6CF65C00EE6F34 /* Other */,
+			);
+			path = SnacTrak;
+			sourceTree = "<group>";
+		};
+		D33E7E591E6A99ED00EDFF87 /* SnacTrakTests */ = {
+			isa = PBXGroup;
+			children = (
+				D33E7E5A1E6A99ED00EDFF87 /* SnacTrakTests.swift */,
+				D33E7E5C1E6A99ED00EDFF87 /* Info.plist */,
+			);
+			path = SnacTrakTests;
+			sourceTree = "<group>";
+		};
+		D33E7E641E6A99ED00EDFF87 /* SnacTrakUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D33E7E651E6A99ED00EDFF87 /* SnacTrakUITests.swift */,
+				D33E7E671E6A99ED00EDFF87 /* Info.plist */,
+			);
+			path = SnacTrakUITests;
+			sourceTree = "<group>";
+		};
+		EAE3AA6051AE08FAAF16973A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				79CC74676F28AAD6F880E49E /* Pods_SnacTrak.framework */,
+				1F9346E0FF2DEEC3F55F5D43 /* Pods_SnacTrakTests.framework */,
+				6DB17AE14E3060B9359A81D4 /* Pods_SnacTrakUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D33E7E3E1E6A99ED00EDFF87 /* SnacTrak */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D33E7E6A1E6A99ED00EDFF87 /* Build configuration list for PBXNativeTarget "SnacTrak" */;
+			buildPhases = (
+				9329C17CE2BFABC9D749A090 /* [CP] Check Pods Manifest.lock */,
+				D33E7E3B1E6A99ED00EDFF87 /* Sources */,
+				D33E7E3C1E6A99ED00EDFF87 /* Frameworks */,
+				D33E7E3D1E6A99ED00EDFF87 /* Resources */,
+				7C7735A10F64910C62EE861F /* [CP] Embed Pods Frameworks */,
+				6354B059CD6D28290DAFD1CF /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SnacTrak;
+			productName = SnacTrak;
+			productReference = D33E7E3F1E6A99ED00EDFF87 /* SnacTrak.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D33E7E551E6A99ED00EDFF87 /* SnacTrakTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D33E7E6D1E6A99ED00EDFF87 /* Build configuration list for PBXNativeTarget "SnacTrakTests" */;
+			buildPhases = (
+				65E001F691BC2BD3A60F9456 /* [CP] Check Pods Manifest.lock */,
+				D33E7E521E6A99ED00EDFF87 /* Sources */,
+				D33E7E531E6A99ED00EDFF87 /* Frameworks */,
+				D33E7E541E6A99ED00EDFF87 /* Resources */,
+				0A340191372C81A35692AB77 /* [CP] Embed Pods Frameworks */,
+				E21E739794468217C662DBC1 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D33E7E581E6A99ED00EDFF87 /* PBXTargetDependency */,
+			);
+			name = SnacTrakTests;
+			productName = SnacTrakTests;
+			productReference = D33E7E561E6A99ED00EDFF87 /* SnacTrakTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D33E7E601E6A99ED00EDFF87 /* SnacTrakUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D33E7E701E6A99ED00EDFF87 /* Build configuration list for PBXNativeTarget "SnacTrakUITests" */;
+			buildPhases = (
+				FEE96E84EEDA09086175D1D0 /* [CP] Check Pods Manifest.lock */,
+				D33E7E5D1E6A99ED00EDFF87 /* Sources */,
+				D33E7E5E1E6A99ED00EDFF87 /* Frameworks */,
+				D33E7E5F1E6A99ED00EDFF87 /* Resources */,
+				8CD782A872E7890BAF80DEB2 /* [CP] Embed Pods Frameworks */,
+				C8D2CA577C3612C91AF46C14 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D33E7E631E6A99ED00EDFF87 /* PBXTargetDependency */,
+			);
+			name = SnacTrakUITests;
+			productName = SnacTrakUITests;
+			productReference = D33E7E611E6A99ED00EDFF87 /* SnacTrakUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D33E7E371E6A99ED00EDFF87 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = TeamBEAR;
+				TargetAttributes = {
+					D33E7E3E1E6A99ED00EDFF87 = {
+						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+					};
+					D33E7E551E6A99ED00EDFF87 = {
+						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D33E7E3E1E6A99ED00EDFF87;
+					};
+					D33E7E601E6A99ED00EDFF87 = {
+						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D33E7E3E1E6A99ED00EDFF87;
+					};
+				};
+			};
+			buildConfigurationList = D33E7E3A1E6A99ED00EDFF87 /* Build configuration list for PBXProject "SnacTrak" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D33E7E361E6A99ED00EDFF87;
+			productRefGroup = D33E7E401E6A99ED00EDFF87 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D33E7E3E1E6A99ED00EDFF87 /* SnacTrak */,
+				D33E7E551E6A99ED00EDFF87 /* SnacTrakTests */,
+				D33E7E601E6A99ED00EDFF87 /* SnacTrakUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D33E7E3D1E6A99ED00EDFF87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3F150711E6AA1F2004AE54E /* GoogleService-Info.plist in Resources */,
+				D35BA1C01E6E2D4600386844 /* tessdata in Resources */,
+				D33E7E4D1E6A99ED00EDFF87 /* Assets.xcassets in Resources */,
+				D33E7E481E6A99ED00EDFF87 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D33E7E541E6A99ED00EDFF87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3F150721E6AA1F2004AE54E /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D33E7E5F1E6A99ED00EDFF87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3F150731E6AA1F2004AE54E /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0A340191372C81A35692AB77 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SnacTrakTests/Pods-SnacTrakTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6354B059CD6D28290DAFD1CF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SnacTrak/Pods-SnacTrak-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		65E001F691BC2BD3A60F9456 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7C7735A10F64910C62EE861F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SnacTrak/Pods-SnacTrak-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8CD782A872E7890BAF80DEB2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SnacTrakUITests/Pods-SnacTrakUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9329C17CE2BFABC9D749A090 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C8D2CA577C3612C91AF46C14 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SnacTrakUITests/Pods-SnacTrakUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E21E739794468217C662DBC1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SnacTrakTests/Pods-SnacTrakTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEE96E84EEDA09086175D1D0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D33E7E3B1E6A99ED00EDFF87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D33E7E451E6A99ED00EDFF87 /* ViewController.swift in Sources */,
+				D3AA98AD1E6D215A009D81C9 /* HomeVC.swift in Sources */,
+				D31B874F1E6CF51A00EE6F34 /* Nutrient.swift in Sources */,
+				D33E7E431E6A99ED00EDFF87 /* AppDelegate.swift in Sources */,
+				D3AA98AF1E6D6936009D81C9 /* DetailsVC.swift in Sources */,
+				D33E7E4B1E6A99ED00EDFF87 /* SnacTrak.xcdatamodeld in Sources */,
+				D31B87551E6CFAEE00EE6F34 /* ScannedText.swift in Sources */,
+				D31B874A1E6CF4C400EE6F34 /* FoodItem.swift in Sources */,
+				D31B87481E6CF22D00EE6F34 /* AddVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D33E7E521E6A99ED00EDFF87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D33E7E5B1E6A99ED00EDFF87 /* SnacTrakTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D33E7E5D1E6A99ED00EDFF87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D33E7E661E6A99ED00EDFF87 /* SnacTrakUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D33E7E581E6A99ED00EDFF87 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D33E7E3E1E6A99ED00EDFF87 /* SnacTrak */;
+			targetProxy = D33E7E571E6A99ED00EDFF87 /* PBXContainerItemProxy */;
+		};
+		D33E7E631E6A99ED00EDFF87 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D33E7E3E1E6A99ED00EDFF87 /* SnacTrak */;
+			targetProxy = D33E7E621E6A99ED00EDFF87 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D33E7E461E6A99ED00EDFF87 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D33E7E471E6A99ED00EDFF87 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D33E7E681E6A99ED00EDFF87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D33E7E691E6A99ED00EDFF87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D33E7E6B1E6A99ED00EDFF87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C55614BC0273A3A1EEE331A6 /* Pods-SnacTrak.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = SnacTrak/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.TeamBEAR.SnacTrak;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SnacTrak-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		D33E7E6C1E6A99ED00EDFF87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D7F79A23817DF2C64FAF690 /* Pods-SnacTrak.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = SnacTrak/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.TeamBEAR.SnacTrak;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SnacTrak-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		D33E7E6E1E6A99ED00EDFF87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ACE645D2F05D109AA972F76 /* Pods-SnacTrakTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = SnacTrakTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.TeamBEAR.SnacTrakTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SnacTrakTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SnacTrak.app/SnacTrak";
+			};
+			name = Debug;
+		};
+		D33E7E6F1E6A99ED00EDFF87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28FE6CBFDDC1AD21CD86E23A /* Pods-SnacTrakTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = SnacTrakTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.TeamBEAR.SnacTrakTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SnacTrakTests-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SnacTrak.app/SnacTrak";
+			};
+			name = Release;
+		};
+		D33E7E711E6A99ED00EDFF87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAB9BBF53FAE35523F15FC50 /* Pods-SnacTrakUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = SnacTrakUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.TeamBEAR.SnacTrakUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SnacTrakUITests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SnacTrak;
+			};
+			name = Debug;
+		};
+		D33E7E721E6A99ED00EDFF87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F21C912FBE3C9806B23D0DE /* Pods-SnacTrakUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = SnacTrakUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.TeamBEAR.SnacTrakUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SnacTrakUITests-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SnacTrak;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D33E7E3A1E6A99ED00EDFF87 /* Build configuration list for PBXProject "SnacTrak" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D33E7E681E6A99ED00EDFF87 /* Debug */,
+				D33E7E691E6A99ED00EDFF87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D33E7E6A1E6A99ED00EDFF87 /* Build configuration list for PBXNativeTarget "SnacTrak" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D33E7E6B1E6A99ED00EDFF87 /* Debug */,
+				D33E7E6C1E6A99ED00EDFF87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D33E7E6D1E6A99ED00EDFF87 /* Build configuration list for PBXNativeTarget "SnacTrakTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D33E7E6E1E6A99ED00EDFF87 /* Debug */,
+				D33E7E6F1E6A99ED00EDFF87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D33E7E701E6A99ED00EDFF87 /* Build configuration list for PBXNativeTarget "SnacTrakUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D33E7E711E6A99ED00EDFF87 /* Debug */,
+				D33E7E721E6A99ED00EDFF87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D33E7E491E6A99ED00EDFF87 /* SnacTrak.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D33E7E4A1E6A99ED00EDFF87 /* SnacTrak.xcdatamodel */,
+			);
+			currentVersion = D33E7E4A1E6A99ED00EDFF87 /* SnacTrak.xcdatamodel */;
+			path = SnacTrak.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D33E7E371E6A99ED00EDFF87 /* Project object */;
+}

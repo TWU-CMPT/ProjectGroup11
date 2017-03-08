@@ -52,7 +52,15 @@ class FoodItem{
     }
     
     func toString() -> String{
-        let result = self.name
+        var result = self.name
+        if nutrients.count > 0
+        {
+            for index in 0...(self.nutrients.count-1){
+                let a = nutrients[index]
+                result = result + " " + a.toString()
+            }
+        }
+
         return result
     }
     

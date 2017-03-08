@@ -157,5 +157,44 @@ class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8Tesser
         
         return newItem
     }
+    
+    
+    /*
+     //Finds out if 2 strings have a majority of matching characters
+     //Returns: Boolean
+     func matchMajority(nutrient: String, scannedN: String) -> Bool{
+     var numMatched = 0                                  // counter for characters matched
+     let majority = (nutrient.characters.count) / 2      // 50% of letters in String to be scanned
+     var count: Int                                      // the number of letters to scan through
+     
+     // Find out which word is the smaller one
+     if(nutrient.characters.count < scannedN.characters.count){
+     count = nutrient.characters.count
+     }
+     else{
+     count = scannedN.characters.count
+     }
+     
+     var aa = Array(nutrient.uppercased().characters)         //Turn Strings into array of chars cuz Swift is annoying
+     var ba = Array(scannedN.uppercased().characters)         // also make sure both are upper cased
+     
+     //search through each letter
+     for index in 0...count{
+     
+     let a = aa[index]
+     let b = ba[index]
+     
+     if (a == b){
+     numMatched += 1                            //increment if letters match
+     }
+     }
+     if(numMatched >= majority){
+     return true
+     }
+     else {
+     return false
+     }
+     }
+    */
 
 }

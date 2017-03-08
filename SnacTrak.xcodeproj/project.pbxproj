@@ -13,7 +13,6 @@
 		D31B87481E6CF22D00EE6F34 /* AddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B87471E6CF22D00EE6F34 /* AddVC.swift */; };
 		D31B874A1E6CF4C400EE6F34 /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B87491E6CF4C400EE6F34 /* FoodItem.swift */; };
 		D31B874F1E6CF51A00EE6F34 /* Nutrient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B874E1E6CF51A00EE6F34 /* Nutrient.swift */; };
-		D31B87551E6CFAEE00EE6F34 /* ScannedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B87541E6CFAEE00EE6F34 /* ScannedText.swift */; };
 		D33E7E431E6A99ED00EDFF87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E7E421E6A99ED00EDFF87 /* AppDelegate.swift */; };
 		D33E7E451E6A99ED00EDFF87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E7E441E6A99ED00EDFF87 /* ViewController.swift */; };
 		D33E7E481E6A99ED00EDFF87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D33E7E461E6A99ED00EDFF87 /* Main.storyboard */; };
@@ -59,7 +58,6 @@
 		D31B87471E6CF22D00EE6F34 /* AddVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddVC.swift; sourceTree = "<group>"; };
 		D31B87491E6CF4C400EE6F34 /* FoodItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
 		D31B874E1E6CF51A00EE6F34 /* Nutrient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nutrient.swift; sourceTree = "<group>"; };
-		D31B87541E6CFAEE00EE6F34 /* ScannedText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannedText.swift; sourceTree = "<group>"; };
 		D33E7E3F1E6A99ED00EDFF87 /* SnacTrak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnacTrak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D33E7E421E6A99ED00EDFF87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D33E7E441E6A99ED00EDFF87 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -124,7 +122,6 @@
 		D31B87521E6CF58500EE6F34 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				D31B87541E6CFAEE00EE6F34 /* ScannedText.swift */,
 				D31B87491E6CF4C400EE6F34 /* FoodItem.swift */,
 				D31B874E1E6CF51A00EE6F34 /* Nutrient.swift */,
 			);
@@ -502,7 +499,6 @@
 				D33E7E431E6A99ED00EDFF87 /* AppDelegate.swift in Sources */,
 				D3AA98AF1E6D6936009D81C9 /* DetailsVC.swift in Sources */,
 				D33E7E4B1E6A99ED00EDFF87 /* SnacTrak.xcdatamodeld in Sources */,
-				D31B87551E6CFAEE00EE6F34 /* ScannedText.swift in Sources */,
 				D31B874A1E6CF4C400EE6F34 /* FoodItem.swift in Sources */,
 				D31B87481E6CF22D00EE6F34 /* AddVC.swift in Sources */,
 			);

@@ -7,34 +7,63 @@
 //
 
 import UIKit
-import TesseractOCR   //Tesseract OCR Framework import statement
+import TesseractOCR
 
-class AddVC: UIViewController, G8TesseractDelegate {
+class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8TesseractDelegate {
 
+    @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var textView2: UITextView!
+    @IBOutlet weak var update: UIButton!
+    var done: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        //editing and button off until load
+        nameText.delegate = self
+        textView.delegate = self
+        textView.isEditable = false
+        update.isEnabled = false
+        
+        //Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddVC.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
+        //set textView borders
+        textView!.layer.borderWidth = 1
+        textView!.layer.borderColor = UIColor.gray.cgColor
+        textView2!.layer.borderWidth = 1
+        textView2!.layer.borderColor = UIColor.gray.cgColor
+        
+    }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         //Create Tesseract object as constant
         if let tesseract = G8Tesseract(language: "eng"){
             tesseract.delegate = self
             /*
              tesseract.image -> Currently loads a pre-defined image by name on disk, in the future we can make separate functionality to retrieve a name based reference (e.g selectImage -> returns: imageName) and feed the imageName reference into tesseract.image here.
              */
-            tesseract.image = UIImage(named: "demoImage2")?.g8_blackAndWhite()
+            tesseract.image = UIImage(named: "demoImage")?.g8_blackAndWhite()
             tesseract.recognize()
-            
             
             /*
              Feed the resulting output of tesseract.recognize() -> tesseract.recognizedText into the text label of the textView object to test output. In the future we can subsitute this with using this data as a parameter for a function to feed data to a database or storage methodic.
              */
-            separate(strin: tesseract.recognizedText)
             textView.text = tesseract.recognizedText
+            
+            //turn on editing once done
+            textView.isEditable = true
+            update.isEnabled = true
+            done = true
+            
         }
-    
     }
+    
     
     /*
      progressImageRecognition -> Debugging print functionality, will be used to track how well the nutrient labels are being recognized, they are fed as 2x , blackAndWhite converted.
@@ -48,58 +77,85 @@ class AddVC: UIViewController, G8TesseractDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
+    
+    
     @IBAction func cancelWasPressed(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "addToHome", sender: nil)
     }
     
     @IBAction func doneWasPressed(_ sender: UIBarButtonItem) {
-        //save and add item, back
-        testClasses()
-        performSegue(withIdentifier: "addToHome", sender: nil)
+        
+        if done == true
+        {
+            //save and add item, back
+            if (nameText.text != "")
+            {
+                let itemToAdd = separate(strin: textView.text)
+                array.append(itemToAdd)
+                performSegue(withIdentifier: "addToHome", sender: nil)
+            }
+            //error message if no name
+            else
+            {
+                let alertController = UIAlertController(title: "Error message:", message: "You need to set a name first!", preferredStyle: UIAlertControllerStyle.alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: nil))
+                alertController.view.tintColor = UIColor.red
+                self.present(alertController, animated: true, completion: nil)
+            }
+        }
     }
     
-    func testClasses() {
+    @IBAction func updateWasPressed(_ sender: UIButton) {
         
-        //test classes
-        let newItem: FoodItem = FoodItem.init(nam: "Granola Bar")
-        let newNutrient: Nutrient = Nutrient.init(nam: "fiber",amoun: 2)
-        let otherNutrient: Nutrient = Nutrient.init(nam: "protein",amoun: 5)
-        _ = newItem.add(nutrient: newNutrient)
-        _ = newItem.add(nutrient: otherNutrient)
-        print(newItem.printAll())
-        
-        array.append(newItem)
-        
+        //do something
+        let itemToPrint = separate(strin: textView.text)
+        textView2.text = itemToPrint.printAll()
     }
     
-    func separate(strin: String) {
-        //do{
-        //    self.text = txt.components(separatedBy: .newlines))   // Swift is annoying
-        //}catch{
-        //    print(error)
-        //}
-        //separate text into array w/ each element containing line
-        //separate this line into sparate array
-        //check if element contains "servings" (important as we need to multiply nutrient values by this #)
-        //skip over rest of elements for this line until one w/ an integer is reached
-        //most labels in Canada have French so we have to skip over any other Strings
-        //ie. Common Format is "Sugar / Sucre 25g" so we have to skip the French
-        //assign servings int this value
-        //(we might be better off with allowing user input for servings, as some have different wording)
-        // call matchMajority func with arguments "Calories" and first element of next new line array
-        // if returns true -> create new nutrient with numeric value a few spaces over
-        // repeat in pattern on most labels
+    func separate(strin: String) -> FoodItem{
         
-        // Note: make sure to use the same array variable for the the inner line arrays so its less memory intensive
+        //initialize FoodItem
+        let newItem: FoodItem = FoodItem.init(nam: nameText.text!)
         
-        // Will also need to handle the case where the 1st element of an inner line array returns false
-        // perhaps save it as a nutrient anyway and let user correct it on confirmation screen?
+        //break up translating string by line
+        let lineArray = strin.components(separatedBy: "\n")
+        for i in 0...lineArray.count - 1
+        {
+            //break up line by token
+            let tokenArray = lineArray[i].components(separatedBy: " ")
+            for j in 0...tokenArray.count - 1
+            {
+                //find key nutrient
+                if ( tokenArray[j].lowercased().contains("fat") || tokenArray[j].lowercased().contains("sodium") || tokenArray[j].lowercased().contains("carbohydrate") || tokenArray[j].lowercased().contains("protein") )
+                {
+                    for k in j+1...tokenArray.count - 1
+                    {
+                        //unit fix
+                        var unitless = tokenArray[k].replacingOccurrences(of: "g", with: "")
+                        unitless = unitless.replacingOccurrences(of: "m", with: "")
+                        //check for number
+                        if Int(unitless) != nil
+                        {
+                            //valid number, add nutrient
+                            let newNutrient: Nutrient = Nutrient.init(nam: tokenArray[j], amoun: Int(unitless)!)
+                            _ = newItem.add(nutrient: newNutrient)
+                            
+                        }
+                    }
+                }
+            }
+        }
         
-        
-        //test classes
-        //let result: FoodItem = FoodItem.init(nam: "name")
-        //return result
+        return newItem
     }
-
 
 }

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import CoreData
+//import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if (error == nil) {
-            print("Wow! Our user signed in! \(user)")
+            print("Wow! Our user signed in!\n")
         }
     }
     
@@ -78,8 +78,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         //self.saveContext()
     }
 
-    // MARK: - Core Data stack
     /*
+    // MARK: - Core Data stack
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
@@ -123,6 +123,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         }
     }
     */
-
 }
 

@@ -58,10 +58,14 @@ class FoodItem{
     
     func printAll() -> String{
         var result = ""
-        for index in 0...(self.nutrients.count-1){
-            let a = nutrients[index]
-            result = result + a.toString() + "\n"
+        if nutrients.count > 0
+        {
+            for index in 0...(self.nutrients.count-1){
+                let a = nutrients[index]
+                result = result + a.toString() + "\n"
+            }
         }
+        
         return result
     }
     

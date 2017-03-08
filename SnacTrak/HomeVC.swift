@@ -66,8 +66,8 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let myString = array[indexPath.row].printAll()
-        performSegue(withIdentifier: "homeToDetails", sender: myString)
+        let myDetails = "Item Name: \n" + array[indexPath.row].name + "\n\n" + "Nutients:\n" + array[indexPath.row].printAll()
+        performSegue(withIdentifier: "homeToDetails", sender: myDetails)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

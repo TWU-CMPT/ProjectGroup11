@@ -136,7 +136,6 @@
 			children = (
 				D33E7E511E6A99ED00EDFF87 /* Info.plist */,
 				D3F150701E6AA1F2004AE54E /* GoogleService-Info.plist */,
-				D33E7E491E6A99ED00EDFF87 /* SnacTrak.xcdatamodeld */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -173,6 +172,7 @@
 				D3AA98AE1E6D6936009D81C9 /* DetailsVC.swift */,
 				D33E7E461E6A99ED00EDFF87 /* Main.storyboard */,
 				D3F150741E6AA366004AE54E /* SnacTrak-Bridging-Header.h */,
+				D33E7E491E6A99ED00EDFF87 /* SnacTrak.xcdatamodeld */,
 				D35BA1BF1E6E2D4600386844 /* tessdata */,
 				D33E7E4C1E6A99ED00EDFF87 /* Assets.xcassets */,
 				D31B87521E6CF58500EE6F34 /* Classes */,

@@ -15,8 +15,10 @@ class DetailsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        myLabel.text = details
         // Do any additional setup after loading the view.
+        
+        //print details to view
+        myLabel.text = details
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,6 +27,7 @@ class DetailsVC: UIViewController {
     }
     
     @IBAction func backWasPressed(_ sender: UIBarButtonItem){
+        //move back to home view
         performSegue(withIdentifier: "detailsToHome", sender: nil)
     }
 

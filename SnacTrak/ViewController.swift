@@ -12,14 +12,18 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        
+        //set up for sign in
+        //remember signed-in user
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().signInSilently()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        //if signed in automatically change to home view
         if GIDSignIn.sharedInstance().hasAuthInKeychain() {
             performSegue(withIdentifier: "segue", sender: nil)
         }
@@ -31,6 +35,7 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
     }
     
     @IBAction func signInWasPressed(sender: AnyObject) {
+        //sign in redirect to google on button press
         GIDSignIn.sharedInstance().signIn()
     }
     

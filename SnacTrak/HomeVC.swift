@@ -8,6 +8,7 @@
 
 import UIKit
 
+//global array for version 1 data and storing
 var array = [FoodItem]()
 
 
@@ -22,6 +23,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        //reload table data
         myTable.reloadData()
     }
     
@@ -31,22 +33,21 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     @IBAction func signOutWasPressed(sender: UIBarButtonItem) {
+        //sign out and return to sign in view
         GIDSignIn.sharedInstance().signOut()
         performSegue(withIdentifier: "segue2", sender: nil)
     }
     
     @IBAction func addWasPressed(_ sender: UIBarButtonItem) {
+        //move to add view
         performSegue(withIdentifier: "homeToAdd", sender: nil)
     }
     
-    
-    // MARK: - Table View
-    
+    //table view functions
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return(array.count)
     }
-    
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
@@ -54,22 +55,23 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         return(cell)
     }
-
     public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
         if editingStyle == UITableViewCellEditingStyle.delete
         {
+            //delete and roload table on swipe left and delete
             array.remove(at: indexPath.row)
             myTable.reloadData()
         }
     }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        //on cell tap move to details view and display corresponding information
         let myDetails = "Item Name: \n" + array[indexPath.row].name + "\n\n" + "Nutients:\n" + array[indexPath.row].printAll()
         performSegue(withIdentifier: "homeToDetails", sender: myDetails)
     }
     
+    //prepare function to pass details data for segue to details view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "homeToDetails")
         {

@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         //load and set user data - temporary storing set up for version 1 before implementing database
         let loadedData = UserDefaults.standard.string(forKey: "storedData")
-        if loadedData != "" {
+        if (loadedData != "") && (loadedData != nil) {
 
             //break up loaded string
             let itemArray = loadedData?.components(separatedBy: "\n")

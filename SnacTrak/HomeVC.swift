@@ -39,7 +39,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     @IBAction func addWasPressed(_ sender: UIBarButtonItem) {
-        //move to add view
+        //Move it to addview.
         performSegue(withIdentifier: "homeToAdd", sender: nil)
     }
     

@@ -9,13 +9,14 @@
 import UIKit
 import TesseractOCR
 
-class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8TesseractDelegate {
+class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8TesseractDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var textView2: UITextView!
     @IBOutlet weak var update: UIButton!
     var done: Bool = false //check for when tesseract is done translating to safely enable user interaction
+    var imageSelected: Bool = false //check whether the user has already selected an image
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,26 +43,63 @@ class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8Tesser
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        //create tesseract object as constant
+        if imageSelected == false{
+            /*
+             imageSelection -> Force user to select an image on view load to be able to use it for Tesseract image processing
+             */
+            let imagePickerController = UIImagePickerController()
+            imagePickerController.delegate = self
+            
+            
+            /*
+             actionSheet -> Action sheet for selecting photo from Library , in future -> Add camera selection here as well as a actionsheet.action
+             */
+            let actionSheet = UIAlertController(title: "Photo Source", message: "Choose your image source...", preferredStyle: .actionSheet)
+            
+            actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: {(action:UIAlertAction)
+                in imagePickerController.sourceType = .photoLibrary
+                self.present(imagePickerController, animated: true, completion: nil)
+            }))
+            
+            actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            
+            //Only present the actionsheet if (UserHasSelectedImage) -> selectedImage == false
+            self.present(actionSheet, animated: true, completion: nil)
+        }
+    }
+    
+    
+    /*
+     imagePickerController -> dictionary functionality for Image Selection, definition and cancelation out of the screen on addPressed
+     */
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let outImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        
+        /*
+         TESSERACT IMAGE RECOGNITION - create object, assign image and use the object.recognize() functionality to transpose the image to text
+        */
         if let tesseract = G8Tesseract(language: "eng"){
             tesseract.delegate = self
-            /*
-             tesseract.image -> currently loads a pre-defined image by name on disk, in the future we can make separate functionality to retrieve a name based reference (e.g selectImage -> returns: imageName) and feed the imageName reference into tesseract.image here.
-             */
-            tesseract.image = UIImage(named: "demoImage")?.g8_blackAndWhite()
+            tesseract.image = outImage.g8_blackAndWhite()
             tesseract.recognize()
-            
             /*
-             feed the resulting output of tesseract.recognize() -> tesseract.recognizedText into the text label of the textView object to test output. In the future we can subsitute this with using this data as a parameter for a function to feed data to a database or storage methodic.
+             Feed the resulting output of tesseract.recognize() -> tesseract.recognizedText into the text label of the textView object to test output. In the future we can subsitute this with using this data as a parameter for a function to feed data to a database or storage methodic
              */
-            textView.text = tesseract.recognizedText
-            
-            //turn on editing once done
+            textView.text = tesseract.recognizedText            //turn on editing once done
             textView.isEditable = true
             update.isEnabled = true
             done = true
             
         }
+        print("[Debug - HomeVC]  Image Was Selected!")
+        picker.dismiss(animated: true, completion: nil)
+        imageSelected = true                                    //Toggle (UserHasSelectedImage) -> Do not display the actionbar on view return
+    }
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+        //User cancelled image selection -> Move back to HomeVC.
+        performSegue(withIdentifier: "addToHome", sender: nil)
     }
     
     /*

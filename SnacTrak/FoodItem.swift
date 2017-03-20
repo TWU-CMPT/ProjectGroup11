@@ -11,6 +11,7 @@ class FoodItem{
     
     var name: String
     var nutrients: Array<Nutrient>
+    var serving: Double
     
     //methods
     
@@ -18,10 +19,12 @@ class FoodItem{
     init(nam: String, nuts: Array<Nutrient>){
         self.name = nam
         self.nutrients = nuts
+        self.serving = 1
     }
     init(nam: String){
         self.name = nam
         self.nutrients = [Nutrient]()
+        self.serving = 1
     }
     
     //add nutrient to foodItem
@@ -67,7 +70,7 @@ class FoodItem{
                 let a = nutrients[index]
                 if index == 0
                 {
-                    result = result + "." + a.toString()
+                    result = result + "!" + a.toString()
                 }
                 else{
                     result = result + " " + a.toString()
@@ -85,7 +88,9 @@ class FoodItem{
         {
             for index in 0...(self.nutrients.count-1){
                 let a = nutrients[index]
-                result = result + a.toString() + "\n"
+                result = result + a.name + " "
+                result = result + String(a.amount) + "g "
+                result = result + String(serving*(a.amount)) + "g\n"
             }
         }
         

@@ -10,12 +10,12 @@ class Nutrient{
     //attributes
     
     var name: String
-    var amount: Int
+    var amount: Double
     
     //methods
     
     //initialize nutrient
-    init(nam: String, amoun: Int){
+    init(nam: String, amoun: Double){
         self.name = nam
         self.amount = amoun
     }
@@ -37,3 +37,17 @@ class Nutrient{
     }
     
 }
+
+/*
+ //Change number of Servings and Return new Total
+ func changeServings(servings: Double) -> Double{
+ self.total = self.amount * servings
+ return self.total
+ }
+ 
+ //convert nutrient to string
+ func toString() -> String{
+ let result = self.name + "                  " + String(self.amount) + "                  " + String(self.total)
+ return result
+ }
+ */

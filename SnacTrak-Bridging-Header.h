@@ -4,3 +4,4 @@
 
 #import <Google/SignIn.h>
 #import <TesseractOCR/TesseractOCR.h>
+#import "SWRevealViewController.h"

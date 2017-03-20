@@ -32,14 +32,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         //load and set user data - temporary storing set up for version 1 before implementing database
         let loadedData = UserDefaults.standard.string(forKey: "storedData")
-        if (loadedData != "") && (loadedData != nil) {
-
+        if (loadedData != nil) && (loadedData != "") {
             //break up loaded string
             let itemArray = loadedData?.components(separatedBy: "\n")
             for i in 0...(itemArray?.count)! - 2
             {
                 //break up into name and nutrints
-                let temp = itemArray?[i].components(separatedBy: ".")
+                let temp = itemArray?[i].components(separatedBy: "!")
                 let itemName = temp?[0]
                 let newTemp = temp?[1]
                 //break up nutrients
@@ -52,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                     while j <= (attributeArray?.count)! - 2
                     {
                         //add nutrient to foodItem
-                        let nutrientToAdd: Nutrient = Nutrient.init(nam: attributeArray![j], amoun: Int(attributeArray![j+1])!)
+                        let nutrientToAdd: Nutrient = Nutrient.init(nam: attributeArray![j], amoun: Double(attributeArray![j+1])!)
                         _ = itemToAdd.add(nutrient: nutrientToAdd)
                         j = j + 2
                     }
@@ -60,10 +59,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                     array.append(itemToAdd)
                 }
             }
-
         }
-
         return true
+        
     }
     
     //google sign in related functions for implentation

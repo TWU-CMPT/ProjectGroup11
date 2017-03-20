@@ -15,10 +15,17 @@ var array = [FoodItem]()
 class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var myTable: UITableView!
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        if self.revealViewController() != nil {
+            menuButton.target = self.revealViewController()
+            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -67,7 +74,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         //on cell tap move to details view and display corresponding information
-        let myDetails = "Item Name: \n" + array[indexPath.row].name + "\n\n" + "Nutients:\n" + array[indexPath.row].printAll()
+        let myDetails = "Item Name: \n" + array[indexPath.row].name + "\n\n" + "Nutient name/Amount Per Serving/Total:\n" + array[indexPath.row].printAll()
         performSegue(withIdentifier: "homeToDetails", sender: myDetails)
     }
     

@@ -39,5 +39,9 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
         GIDSignIn.sharedInstance().signIn()
     }
     
+    @IBAction func useOfflineWasPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "segue", sender: nil)
+    }
+    
 }
 

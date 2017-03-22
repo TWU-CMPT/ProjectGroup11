@@ -14,7 +14,7 @@
 		D31B874A1E6CF4C400EE6F34 /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B87491E6CF4C400EE6F34 /* FoodItem.swift */; };
 		D31B874F1E6CF51A00EE6F34 /* Nutrient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B874E1E6CF51A00EE6F34 /* Nutrient.swift */; };
 		D33E7E431E6A99ED00EDFF87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E7E421E6A99ED00EDFF87 /* AppDelegate.swift */; };
-		D33E7E451E6A99ED00EDFF87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E7E441E6A99ED00EDFF87 /* ViewController.swift */; };
+		D33E7E451E6A99ED00EDFF87 /* TitleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E7E441E6A99ED00EDFF87 /* TitleScreen.swift */; };
 		D33E7E481E6A99ED00EDFF87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D33E7E461E6A99ED00EDFF87 /* Main.storyboard */; };
 		D33E7E4B1E6A99ED00EDFF87 /* SnacTrak.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D33E7E491E6A99ED00EDFF87 /* SnacTrak.xcdatamodeld */; };
 		D33E7E4D1E6A99ED00EDFF87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33E7E4C1E6A99ED00EDFF87 /* Assets.xcassets */; };
@@ -23,6 +23,8 @@
 		D35BA1C01E6E2D4600386844 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = D35BA1BF1E6E2D4600386844 /* tessdata */; };
 		D3AA98AD1E6D215A009D81C9 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AA98AC1E6D215A009D81C9 /* HomeVC.swift */; };
 		D3AA98AF1E6D6936009D81C9 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AA98AE1E6D6936009D81C9 /* DetailsVC.swift */; };
+		D3CCAFED1E81DC37006D677C /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CCAFEC1E81DC37006D677C /* Goal.swift */; };
+		D3CCAFEF1E81EA72006D677C /* AddGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CCAFEE1E81EA72006D677C /* AddGoalVC.swift */; };
 		D3E0F0641E7EDCAF00F0C0B6 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E0F0631E7EDCAF00F0C0B6 /* SWRevealViewController.m */; };
 		D3E0F06A1E7F02B500F0C0B6 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0F0691E7F02B500F0C0B6 /* MenuVC.swift */; };
 		D3E0F06C1E7FAE3600F0C0B6 /* MealsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0F06B1E7FAE3600F0C0B6 /* MealsVC.swift */; };
@@ -65,7 +67,7 @@
 		D31B874E1E6CF51A00EE6F34 /* Nutrient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nutrient.swift; sourceTree = "<group>"; };
 		D33E7E3F1E6A99ED00EDFF87 /* SnacTrak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnacTrak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D33E7E421E6A99ED00EDFF87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D33E7E441E6A99ED00EDFF87 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D33E7E441E6A99ED00EDFF87 /* TitleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScreen.swift; sourceTree = "<group>"; };
 		D33E7E471E6A99ED00EDFF87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D33E7E4A1E6A99ED00EDFF87 /* SnacTrak.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SnacTrak.xcdatamodel; sourceTree = "<group>"; };
 		D33E7E4C1E6A99ED00EDFF87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,6 +81,8 @@
 		D35BA1BF1E6E2D4600386844 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		D3AA98AC1E6D215A009D81C9 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		D3AA98AE1E6D6936009D81C9 /* DetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
+		D3CCAFEC1E81DC37006D677C /* Goal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
+		D3CCAFEE1E81EA72006D677C /* AddGoalVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGoalVC.swift; sourceTree = "<group>"; };
 		D3E0F0621E7EDCA100F0C0B6 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		D3E0F0631E7EDCAF00F0C0B6 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		D3E0F0691E7F02B500F0C0B6 /* MenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
@@ -135,6 +139,7 @@
 			children = (
 				D31B87491E6CF4C400EE6F34 /* FoodItem.swift */,
 				D31B874E1E6CF51A00EE6F34 /* Nutrient.swift */,
+				D3CCAFEC1E81DC37006D677C /* Goal.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -178,15 +183,13 @@
 			isa = PBXGroup;
 			children = (
 				D33E7E421E6A99ED00EDFF87 /* AppDelegate.swift */,
-				D33E7E441E6A99ED00EDFF87 /* ViewController.swift */,
-				D3AA98AC1E6D215A009D81C9 /* HomeVC.swift */,
-				D31B87471E6CF22D00EE6F34 /* AddVC.swift */,
-				D3AA98AE1E6D6936009D81C9 /* DetailsVC.swift */,
-				D33E7E461E6A99ED00EDFF87 /* Main.storyboard */,
+				D33E7E441E6A99ED00EDFF87 /* TitleScreen.swift */,
 				D3E0F0691E7F02B500F0C0B6 /* MenuVC.swift */,
-				D3E0F06F1E7FE71200F0C0B6 /* GoalsVC.swift */,
-				D3E0F06B1E7FAE3600F0C0B6 /* MealsVC.swift */,
+				D3CCAFF01E81EAE0006D677C /* Home */,
+				D3CCAFF11E81EAE6006D677C /* Goals */,
+				D3CCAFF21E81EAEB006D677C /* Meals */,
 				D3E0F06D1E7FAE5000F0C0B6 /* AboutVC.swift */,
+				D33E7E461E6A99ED00EDFF87 /* Main.storyboard */,
 				D33E7E4C1E6A99ED00EDFF87 /* Assets.xcassets */,
 				D35BA1BF1E6E2D4600386844 /* tessdata */,
 				D31B87521E6CF58500EE6F34 /* Classes */,
@@ -211,6 +214,33 @@
 				D33E7E671E6A99ED00EDFF87 /* Info.plist */,
 			);
 			path = SnacTrakUITests;
+			sourceTree = "<group>";
+		};
+		D3CCAFF01E81EAE0006D677C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D3AA98AC1E6D215A009D81C9 /* HomeVC.swift */,
+				D31B87471E6CF22D00EE6F34 /* AddVC.swift */,
+				D3AA98AE1E6D6936009D81C9 /* DetailsVC.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		D3CCAFF11E81EAE6006D677C /* Goals */ = {
+			isa = PBXGroup;
+			children = (
+				D3E0F06F1E7FE71200F0C0B6 /* GoalsVC.swift */,
+				D3CCAFEE1E81EA72006D677C /* AddGoalVC.swift */,
+			);
+			name = Goals;
+			sourceTree = "<group>";
+		};
+		D3CCAFF21E81EAEB006D677C /* Meals */ = {
+			isa = PBXGroup;
+			children = (
+				D3E0F06B1E7FAE3600F0C0B6 /* MealsVC.swift */,
+			);
+			name = Meals;
 			sourceTree = "<group>";
 		};
 		EAE3AA6051AE08FAAF16973A /* Frameworks */ = {
@@ -511,11 +541,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3E0F0701E7FE71200F0C0B6 /* GoalsVC.swift in Sources */,
-				D33E7E451E6A99ED00EDFF87 /* ViewController.swift in Sources */,
+				D3CCAFEF1E81EA72006D677C /* AddGoalVC.swift in Sources */,
+				D33E7E451E6A99ED00EDFF87 /* TitleScreen.swift in Sources */,
 				D3AA98AD1E6D215A009D81C9 /* HomeVC.swift in Sources */,
 				D31B874F1E6CF51A00EE6F34 /* Nutrient.swift in Sources */,
 				D33E7E431E6A99ED00EDFF87 /* AppDelegate.swift in Sources */,
 				D3E0F06E1E7FAE5000F0C0B6 /* AboutVC.swift in Sources */,
+				D3CCAFED1E81DC37006D677C /* Goal.swift in Sources */,
 				D3AA98AF1E6D6936009D81C9 /* DetailsVC.swift in Sources */,
 				D3E0F06A1E7F02B500F0C0B6 /* MenuVC.swift in Sources */,
 				D3E0F06C1E7FAE3600F0C0B6 /* MealsVC.swift in Sources */,

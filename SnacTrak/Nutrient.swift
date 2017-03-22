@@ -37,17 +37,3 @@ class Nutrient{
     }
     
 }
-
-/*
- //Change number of Servings and Return new Total
- func changeServings(servings: Double) -> Double{
- self.total = self.amount * servings
- return self.total
- }
- 
- //convert nutrient to string
- func toString() -> String{
- let result = self.name + "                  " + String(self.amount) + "                  " + String(self.total)
- return result
- }
- */

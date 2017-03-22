@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, GIDSignInUIDelegate {
+class TitleScreen: UIViewController, GIDSignInUIDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()

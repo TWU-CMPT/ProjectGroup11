@@ -12,6 +12,7 @@ class FoodItem{
     var name: String
     var nutrients: Array<Nutrient>
     var serving: Double
+    var date: NSDate
     
     //methods
     
@@ -20,11 +21,13 @@ class FoodItem{
         self.name = nam
         self.nutrients = nuts
         self.serving = 1
+        self.date = NSDate()
     }
     init(nam: String){
         self.name = nam
         self.nutrients = [Nutrient]()
         self.serving = 1
+        self.date = NSDate()
     }
     
     //add nutrient to foodItem
@@ -96,7 +99,5 @@ class FoodItem{
         
         return result
     }
-    
-    
     
 }

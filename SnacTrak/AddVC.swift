@@ -57,7 +57,6 @@ class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8Tesser
              actionSheet -> Action sheet for selecting photo from Library , in future -> Add camera selection here as well as a actionsheet.action
              */
             let actionSheet = UIAlertController(title: "Select Image", message: "Choose your image source...", preferredStyle: .actionSheet)
-            
             actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: {(action:UIAlertAction)
                 in imagePickerController.sourceType = .photoLibrary
                 self.present(imagePickerController, animated: true, completion: nil)
@@ -70,7 +69,7 @@ class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8Tesser
         }
         
     }
-    
+
     /*
      imagePickerController -> dictionary functionality for Image Selection, definition and cancelation out of the screen on addPressed
      */
@@ -83,7 +82,7 @@ class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8Tesser
         
         /*
          TESSERACT IMAGE RECOGNITION - create object, assign image and use the object.recognize() functionality to transpose the image to text
-         */
+        */
         if let tesseract = G8Tesseract(language: "eng"){
             tesseract.delegate = self
             tesseract.image = outImage.g8_blackAndWhite()
@@ -97,6 +96,9 @@ class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8Tesser
             done = true
             
         }
+        print("[Debug - HomeVC]  Image Was Selected!")
+        picker.dismiss(animated: true, completion: nil)
+        imageSelected = true                                    //Toggle (UserHasSelectedImage) -> Do not display the actionbar on view return
     }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
@@ -127,11 +129,6 @@ class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8Tesser
         return false
     }
     
-    //override func viewDidLayoutSubviews() {
-    //    super.viewDidLayoutSubviews()
-    //    textView.setContentOffset(CGPoint.zero, animated: false)
-    //}
-    
     @IBAction func cancelWasPressed(_ sender: UIBarButtonItem) {
         //dont add anything and return to home view
         performSegue(withIdentifier: "addToHome", sender: nil)
@@ -157,7 +154,7 @@ class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8Tesser
                 //if incorrect serving input
                 if ((Double(servingValue) == nil) || (Double(servingValue)! < 1))
                 {
-                    errorMessage(messag: "Invalid Serving input!")
+                    errorMessage(messag: "Invalid serving input!")
                 }
                 else
                 {
@@ -166,6 +163,8 @@ class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8Tesser
                     itemToAdd.serving = Double(servingValue)!
                     //add the foodItem to the user data array
                     array.append(itemToAdd)
+                    //update appropriate goal progress
+                    updateGoals(item: itemToAdd)
                     //return to home view
                     performSegue(withIdentifier: "addToHome", sender: nil)
                 }
@@ -198,7 +197,7 @@ class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8Tesser
             //if incorrect serving input
             if ((Double(servingValue) == nil) || (Double(servingValue)! < 1))
             {
-                errorMessage(messag: "Invalid Serving input!")
+                errorMessage(messag: "Invalid serving input!")
             }
             else
             {
@@ -331,5 +330,22 @@ class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8Tesser
         }
     }
 
+    
+    func updateGoals(item: FoodItem)
+    {
+        if goalArray.count > 0
+        {
+            for i in 0...goalArray.count-1
+            {
+                for j in 0...item.nutrients.count-1
+                {
+                    if goalArray[i].nutrient == item.nutrients[j].name
+                    {
+                        goalArray[i].progress += item.nutrients[j].amount
+                    }
+                }
+            }
+        }
+    }
     
 }

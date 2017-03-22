@@ -354,7 +354,7 @@ static CGFloat scaledValue( CGFloat v1, CGFloat min2, CGFloat max2, CGFloat min1
 {
     __weak SWRevealViewController *_revealVC;
     UIView *_view;
-    UIViewController *_toVC;
+   UIViewController *_toVC;
     UIViewController *_fromVC;
     void (^_completion)(void);
 }
@@ -741,12 +741,12 @@ const int FrontViewPositionNone = 0xff;
 }
 
 
-- (NSUInteger)supportedInterfaceOrientations
-{
+//- (NSUInteger)supportedInterfaceOrientations
+//{
     // we could have simply not implemented this, but we choose to call super to make explicit that we
     // want the default behavior.
-    return [super supportedInterfaceOrientations];
-}
+//    return [super supportedInterfaceOrientations];
+//}
 
 
 #pragma mark - Public methods and property accessors
@@ -1347,7 +1347,7 @@ const int FrontViewPositionNone = 0xff;
     
     NSTimeInterval duration = animated?_toggleAnimationDuration:0.0;
     NSTimeInterval firstDuration = duration;
-    int initialPosDif = labs( _frontViewPosition - preReplacementPosition );
+    long initialPosDif = labs( _frontViewPosition - preReplacementPosition );
     if ( initialPosDif == 1 ) firstDuration *= 0.8;
     else if ( initialPosDif == 0 ) firstDuration = 0;
     

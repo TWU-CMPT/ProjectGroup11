@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WcF-2E-b1m">
-                                <rect key="frame" x="76" y="120" width="223.5" height="91"/>
+                                <rect key="frame" x="76.5" y="120" width="223.5" height="91"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SnacTrak" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPd-cG-KQ1">
                                         <rect key="frame" x="0.0" y="0.0" width="223.5" height="67"/>
@@ -42,7 +42,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HpM-6g-EgP">
-                                <rect key="frame" x="114.5" y="438" width="146" height="36"/>
+                                <rect key="frame" x="115" y="438" width="146" height="36"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="146" id="Cnf-Gf-7QW"/>
@@ -406,7 +406,7 @@
         <scene sceneID="tU1-hs-AZ4">
             <objects>
                 <navigationController id="3UB-cZ-hAz" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aIK-WT-O7A">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aIK-WT-O7A">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -538,6 +538,7 @@
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type amount here (in g)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pnm-Qt-7gS">
                                 <rect key="frame" x="139" y="263" width="220" height="30"/>
+                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="KNz-mF-3D6"/>
                                 </constraints>
@@ -594,7 +595,7 @@
         <scene sceneID="nra-pA-eJf">
             <objects>
                 <navigationController id="4s7-P4-wu3" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yOB-uc-AXo">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="yOB-uc-AXo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -636,7 +637,7 @@
         <scene sceneID="XB3-mN-E80">
             <objects>
                 <navigationController id="jfz-Yf-dvf" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GjQ-u0-wNj">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="GjQ-u0-wNj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -722,7 +723,7 @@
         <scene sceneID="sWB-LK-eCd">
             <objects>
                 <navigationController id="qC2-ks-NhS" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dci-2l-fgQ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dci-2l-fgQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -803,11 +804,12 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Loading please wait..." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pev-q5-KUr">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Loading please wait..." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pev-q5-KUr">
                                 <rect key="frame" x="16" y="167" width="343" height="227"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gsh-Rc-nJv">
                                 <rect key="frame" x="304" y="402" width="55" height="22"/>
@@ -891,7 +893,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="F0R-WL-sVT"/>
-        <segue reference="hTb-ZD-kYs"/>
+        <segue reference="ppw-hr-rLY"/>
         <segue reference="zzl-f8-th3"/>
     </inferredMetricsTieBreakers>
 </document>

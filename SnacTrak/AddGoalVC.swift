@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddGoalVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class AddGoalVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var nutrientPicker: UIPickerView!
     @IBOutlet weak var amountGiven: UITextField!
@@ -16,8 +16,7 @@ class AddGoalVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     
     //array to populate picker view
     var nutrients = ["Calories", "Carbohydrate", "Cholesterol", "Fat", "Fibre", "Protein", "Sodium", "Sugars"]
-    //variable to set goal nutrient
-    var pickerRow = 0;
+    var pickerRow = 3
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +28,8 @@ class AddGoalVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         datePicker.minimumDate = Date()
         datePicker.maximumDate = Calendar.current.date(byAdding: .month, value: 1, to: Date())
         
-        //set up for tap gesture to remove keyboard after editing
+        //set up for tap gesture and return key to end editing
+        amountGiven.delegate = self
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddVC.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
@@ -43,12 +43,13 @@ class AddGoalVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     func dismissKeyboard() {
         view.endEditing(true)
     }
-    //when editing name return key will dismiss keyboard, tap gesture also works
+    //when editing amount return key will dismiss keyboard, tap gesture also works
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
     }
 
+    //nutrient picker view functions
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return nutrients[row]
     }

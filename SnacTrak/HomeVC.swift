@@ -18,6 +18,9 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //initializing date formatter
     let formatter = DateFormatter()
+    //variables to control alert messages
+    var messages = [String]()
+    var count = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,14 +34,14 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         //set date format
         formatter.dateFormat = "MM-dd-yyyy"
-        //check if any goal deadlines have passed
-        checkGoals()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         //reload table data
         myTable.reloadData()
+        //check if any goal deadlines have passed
+        checkGoals()
     }
     
     override func didReceiveMemoryWarning() {
@@ -92,37 +95,52 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     {
         if goalArray.count > 0
         {
-            for i in 0...goalArray.count-1
+            for i in (0...goalArray.count-1).reversed()
             {
-                //***currently always true, need to find a way to truncate dates to ignore time
-                //if Date() > goalArray[i].completedBy
-                //{
-                //    print(String(describing: Date()) + "\n")
-                //    print(String(describing: goalArray[i].completedBy) + "\n")
-                //    //alert they didnt reach their goal
-                //    let message = "Goal " + String(goalArray[i].amount) + "g of " + goalArray[i].nutrient + " not reached"
-                //    alertMessage(messag: message)
-                //    //remove goal from array
-                //    goalArray.remove(at: i)
-                //}
-                //else if goalArray[i].progress >= goalArray[i].amount
-                if goalArray[i].progress >= goalArray[i].amount
+                //check if date to be completed by has passed
+                let calendar: NSCalendar! = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
+                let now = Date()
+                let date = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: now, options: NSCalendar.Options.matchFirst)!
+                if date > goalArray[i].completedBy
                 {
-                    //alert they reached their goal
+                    //add not reached goal alert
+                    let message = "Goal " + String(goalArray[i].amount) + "g of " + goalArray[i].nutrient + " not reached"
+                    messages.append(message)
+                    //remove goal from array
+                    goalArray.remove(at: i)
+                }
+                //check if goal amount has been reached
+                else if goalArray[i].progress >= goalArray[i].amount
+                {
+                    //add reached goal alert
                     let message = "Goal " + String(goalArray[i].amount) + "g of " + goalArray[i].nutrient + " reached"
-                    alertMessage(messag: message)
+                    messages.append(message)
                     //remove goal from array
                     goalArray.remove(at: i)
                 }
             }
+            //if there are message alerts
+            if messages.count > 0
+            {
+                //pop-up first alert
+                count += 1
+                alertMessage(messag: messages[0])
+            }
         }
     }
     
-    //pop-up error message
+    //pop-up alert message
     func alertMessage(messag: String)
     {
         let alertController = UIAlertController(title: "Goal Alert:", message: messag, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: nil))
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: { (action: UIAlertAction!) in
+            //recursively call alertMessage until all alerts have been processed
+            if self.count < self.messages.count
+            {
+                self.count += 1
+                self.alertMessage(messag: self.messages[self.count-1])
+            }
+        }))
         alertController.view.tintColor = UIColor.red
         self.present(alertController, animated: true, completion: nil)
     }

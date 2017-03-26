@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AddGoalVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
@@ -24,6 +25,7 @@ class AddGoalVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UI
         
         //set picker view starting row
         nutrientPicker.selectRow(3, inComponent: 0, animated: true)
+        
         //limit date picker range
         datePicker.minimumDate = Date()
         datePicker.maximumDate = Calendar.current.date(byAdding: .month, value: 1, to: Date())
@@ -80,12 +82,22 @@ class AddGoalVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UI
         }
         else
         {
+            //create goal
+            let entityGoal = NSEntityDescription.entity(forEntityName: "Goal", in: managedObjectContext)
+            let newGoal = NSManagedObject(entity: entityGoal!, insertInto: managedObjectContext) as! Goal
+            newGoal.nutrient = nutrients[pickerRow]
+            newGoal.amount = Double(amountGiven.text!)!
+            newGoal.completedBy = datePicker.date as NSDate?
+            
             //add goal
-            let nutrient = nutrients[pickerRow]
-            let amount = amountGiven.text
-            let completedBy = datePicker.date
-            let newGoal: Goal = Goal.init(nut: nutrient, amoun: Double(amount!)!, date: completedBy)
-            goalArray.append(newGoal)
+            do {
+                try managedObjectContext.save()
+                goalArray.append(newGoal)
+            }
+            catch{
+                print("goal add error")
+            }
+            
             //return to goals view
             performSegue(withIdentifier: "addToGoals", sender: nil)
             

@@ -16,6 +16,7 @@ class AboutVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        //set up navigation
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))

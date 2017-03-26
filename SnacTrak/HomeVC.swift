@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
-//global array
+//global variables
 var array = [FoodItem]()
+var goalArray = [Goal]()
+let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
 class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -32,14 +35,20 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+        
         //set date format
         formatter.dateFormat = "MM-dd-yyyy"
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        //reload table data
-        myTable.reloadData()
+        
+        //load saved foodItems
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "FoodItem")
+        do {
+            let results = try managedObjectContext.fetch(fetchRequest)
+            array = results as! [FoodItem]
+        }
+        catch {
+            print("foodItem fetch error")
+        }
+        
         //check if any goal deadlines have passed
         checkGoals()
     }
@@ -63,22 +72,29 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
         cell.textLabel?.text = array[indexPath.row].name
-        cell.detailTextLabel?.text = "Date added: " + formatter.string(from: array[indexPath.row].date as Date)
+        cell.detailTextLabel?.text = "Date added: " + formatter.string(from: array[indexPath.row].date as! Date)
         return(cell)
     }
     public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
         if editingStyle == UITableViewCellEditingStyle.delete
         {
-            //delete and roload table on swipe left and delete
-            array.remove(at: indexPath.row)
-            myTable.reloadData()
+            //delete and reload table on swipe left and delete
+            do {
+                managedObjectContext.delete(array[indexPath.row])
+                try managedObjectContext.save()
+                array.remove(at: indexPath.row)
+                myTable.reloadData()
+            }
+            catch{
+                print("foodItem delete error")
+            }
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         //on cell tap move to details view and display corresponding information
-        let myDetails = "Item Name: \n" + array[indexPath.row].name + "\n\n" + "Nutient name/Amount Per Serving/Total:\n" + array[indexPath.row].printAll()
+        let myDetails = "Item Name: \n" + array[indexPath.row].name! + "\n\n" + "Nutient name/Amount Per Serving/Total:\n" + array[indexPath.row].printAll()
         performSegue(withIdentifier: "homeToDetails", sender: myDetails)
     }
     
@@ -101,22 +117,38 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 let calendar: NSCalendar! = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
                 let now = Date()
                 let date = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: now, options: NSCalendar.Options.matchFirst)!
-                if date > goalArray[i].completedBy
+                if date > goalArray[i].completedBy as! Date
                 {
                     //add not reached goal alert
-                    let message = "Goal " + String(goalArray[i].amount) + "g of " + goalArray[i].nutrient + " not reached"
+                    let message = "Goal " + goalArray[i].toString() + " not reached"
                     messages.append(message)
-                    //remove goal from array
-                    goalArray.remove(at: i)
+                    //delete goal
+                    do {
+                        managedObjectContext.delete(goalArray[i])
+                        try managedObjectContext.save()
+                        goalArray.remove(at: i)
+                    }
+                    catch{
+                        print("goal delete error")
+                    }
+                    
+                    
                 }
                 //check if goal amount has been reached
                 else if goalArray[i].progress >= goalArray[i].amount
                 {
                     //add reached goal alert
-                    let message = "Goal " + String(goalArray[i].amount) + "g of " + goalArray[i].nutrient + " reached"
+                    let message = "Goal " + goalArray[i].toString() + " reached"
                     messages.append(message)
-                    //remove goal from array
-                    goalArray.remove(at: i)
+                    //delete goal
+                    do {
+                        managedObjectContext.delete(goalArray[i])
+                        try managedObjectContext.save()
+                        goalArray.remove(at: i)
+                    }
+                    catch{
+                        print("goal delete error")
+                    }
                 }
             }
             //if there are message alerts

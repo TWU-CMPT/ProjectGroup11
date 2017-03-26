@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 import TesseractOCR
 
 class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8TesseractDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -152,10 +153,19 @@ class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8Tesser
                 //convert translated text into a foodItem
                 let itemToAdd = separate(strin: textView.text)
                 itemToAdd.serving = Double(servingValue)!
-                //add the foodItem to the user data array
-                array.append(itemToAdd)
+                
+                //add foodItem
+                do {
+                    try managedObjectContext.save()
+                    array.append(itemToAdd)
+                }
+                catch{
+                    print("foodItem add error")
+                }
+
                 //update appropriate goal progress
                 updateGoals(item: itemToAdd)
+
                 //return to home view
                 performSegue(withIdentifier: "addToHome", sender: nil)
             }
@@ -185,11 +195,19 @@ class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8Tesser
         }
         else
         {
-            //convert translated text into a foodItem
+            //convert translated text into a temporary foodItem
             let itemToPrint = separate(strin: textView.text)
             itemToPrint.serving = Double(servingValue)!
             //output foodItem contents
             textView2.text = "Nutrient Name/Amount Per Serving/Total:\n" + itemToPrint.printAll()
+            //delete foodItem
+            do {
+                managedObjectContext.delete(itemToPrint)
+                try managedObjectContext.save()
+            }
+            catch{
+                print("foodItem delete error")
+            }
         }
     }
     
@@ -206,7 +224,10 @@ class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8Tesser
     func separate(strin: String) -> FoodItem{
         
         //initialize a foodItem
-        let newItem: FoodItem = FoodItem.init(nam: nameText.text!)
+        let entityFoodItem = NSEntityDescription.entity(forEntityName: "FoodItem", in: managedObjectContext)
+        let newItem = NSManagedObject(entity: entityFoodItem!, insertInto: managedObjectContext) as! FoodItem
+        newItem.name = nameText.text!
+        newItem.date = NSDate()
         
         //array of nutrient strings to look for
         let nutrientNames: [String] = ["Calories", "Fat", "Cholesterol", "Sodium", "Carbohydrate", "Fibre", "Sugars", "Protein"]
@@ -234,8 +255,11 @@ class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8Tesser
                         //add nutrient to foodItem if not 0 amount
                         if (amount != 0)
                         {
-                            let newNutrient: Nutrient = Nutrient.init(nam: name, amoun: amount)
-                            _ = newItem.add(nutrient: newNutrient)
+                            let entityNutrient = NSEntityDescription.entity(forEntityName: "Nutrient", in: managedObjectContext)
+                            let newNutrient = NSManagedObject(entity: entityNutrient!, insertInto: managedObjectContext) as! Nutrient
+                            newNutrient.name = name
+                            newNutrient.amount = amount
+                            newItem.addToNutrients(newNutrient)
                         }
                         //increment n because nutreintNames[n] has been found
                         n += 1
@@ -320,15 +344,16 @@ class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8Tesser
         {
             for i in 0...goalArray.count-1
             {
-                if item.nutrients.count > 0
+                let nutArray = Array(item.nutrients)
+                if nutArray.count > 0
                 {
-                    for j in 0...item.nutrients.count-1
+                    for j in 0...nutArray.count-1
                     {
                         //if a nutrient in current food item is the goal nutrient
-                        if goalArray[i].nutrient == item.nutrients[j].name
+                        if goalArray[i].nutrient == nutArray[j].name
                         {
                             //update progress amount
-                            goalArray[i].progress += item.nutrients[j].amount * item.serving
+                            goalArray[i].progress += nutArray[j].amount * item.serving
                         }
                     }
                 }

@@ -12,6 +12,7 @@ import CoreData
 //global variables
 var array = [FoodItem]()
 var goalArray = [Goal]()
+var mealArray = [Meal]()
 let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
 class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -47,6 +48,16 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         catch {
             print("foodItem fetch error")
+        }
+        
+        //load saved goals
+        let fetchRequest2 = NSFetchRequest<NSFetchRequestResult>(entityName: "Goal")
+        do {
+            let results = try managedObjectContext.fetch(fetchRequest2)
+            goalArray = results as! [Goal]
+        }
+        catch {
+            print("goal fetch error")
         }
         
         //check if any goal deadlines have passed
@@ -94,7 +105,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         //on cell tap move to details view and display corresponding information
-        let myDetails = "Item Name: \n" + array[indexPath.row].name! + "\n\n" + "Nutient name/Amount Per Serving/Total:\n" + array[indexPath.row].printAll()
+        let myDetails = array[indexPath.row].printItem()
         performSegue(withIdentifier: "homeToDetails", sender: myDetails)
     }
     

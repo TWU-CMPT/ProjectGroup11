@@ -16,15 +16,18 @@ class AddGoalVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UI
     @IBOutlet weak var datePicker: UIDatePicker!
     
     //array to populate picker view
-    var nutrients = ["Calories", "Carbohydrate", "Cholesterol", "Fat", "Fibre", "Protein", "Sodium", "Sugars"]
-    var pickerRow = 3
+    let nutrients = ["Calories (g)", "Calcium (%)", "Carbohydrate (g)", "Cholesterol (mg)", "Fat (g)", "Fibre (g)", "Iron (%)", "Protein (g)", "Sodium (mg)", "Sugars (g)", "Vitamin A (%)", "Vitamin C (%)"]
+    //array to get name
+    let nutrientNames = ["Calories", "Calcium", "Carbohydrate", "Cholesterol", "Fat", "Fibre", "Iron", "Protein", "Sodium", "Sugars", "Vitamin A", "Vitamin C"]
+    //default picker position
+    var pickerRow = 5
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         //set picker view starting row
-        nutrientPicker.selectRow(3, inComponent: 0, animated: true)
+        nutrientPicker.selectRow(5, inComponent: 0, animated: true)
         
         //limit date picker range
         datePicker.minimumDate = Date()
@@ -85,7 +88,8 @@ class AddGoalVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UI
             //create goal
             let entityGoal = NSEntityDescription.entity(forEntityName: "Goal", in: managedObjectContext)
             let newGoal = NSManagedObject(entity: entityGoal!, insertInto: managedObjectContext) as! Goal
-            newGoal.nutrient = nutrients[pickerRow]
+            
+            newGoal.nutrient = nutrientNames[pickerRow]
             newGoal.amount = Double(amountGiven.text!)!
             newGoal.completedBy = datePicker.date as NSDate?
             

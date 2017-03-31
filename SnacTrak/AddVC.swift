@@ -19,6 +19,7 @@ class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8Tesser
     @IBOutlet weak var update: UIButton!
     var imageSelected: Bool = false //check whether the user has already selected an image
     var servingValue = "1" //set default serving value
+    var imageToRecognize: UIImage? = nil //image for tesseract
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,81 +38,78 @@ class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8Tesser
         textView!.layer.borderColor = UIColor.gray.cgColor
         textView2!.layer.borderWidth = 1
         textView2!.layer.borderColor = UIColor.gray.cgColor
-        
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        if imageSelected == false{
-            /*
-             imageSelection -> Force user to select an image on view load to be able to use it for Tesseract image processing
-             */
+        //set up selection menu
+        if imageSelected == false {
+            //set up photo library option
             let imagePickerController = UIImagePickerController()
             imagePickerController.delegate = self
             imagePickerController.navigationBar.tintColor = .red
             
-            
-            /*
-             actionSheet -> Action sheet for selecting photo from Library , in future -> Add camera selection here as well as a actionsheet.action
-             */
-            let actionSheet = UIAlertController(title: "Select Image", message: "Choose your image source...", preferredStyle: .actionSheet)
+            //set up action sheet
+            let actionSheet = UIAlertController(title: "Add Options Menu", message: "Choose your information source...", preferredStyle: .actionSheet)
             actionSheet.view.tintColor = UIColor.red
-            actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: {(action:UIAlertAction)
-                in imagePickerController.sourceType = .photoLibrary
+            actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: {(action:UIAlertAction) in
+                //redirect to camera
+            }))
+            actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: {(action:UIAlertAction) in
+                //present photo library
+                imagePickerController.sourceType = .photoLibrary
                 self.present(imagePickerController, animated: true, completion: nil)
             }))
-            
-            actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-            
-            //Only present the actionsheet if (UserHasSelectedImage) -> selectedImage == false
+            actionSheet.addAction(UIAlertAction(title: "Manual Entry", style: .default, handler: {(action:UIAlertAction) in
+                //Get rid of loading text and dismiss action sheet
+                self.textView.text = "Calories 0g\nFat 0g\nCholesterol 0mg\nSodium 0mg\nCarbohydrate 0g\nFibre 0g\nSugars 0g\nProtein 0g\nVitamin A 0%\nVitamin C 0%\nCalcium 0%\nIron 0%\n"
+            }))
+            actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {(action:UIAlertAction) in
+                //return to home view
+                self.performSegue(withIdentifier: "addToHome", sender: nil)
+            }))
             self.present(actionSheet, animated: true, completion: nil)
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        if imageSelected == true
+        {
+            //translate image to text
+            if let tesseract = G8Tesseract(language: "eng") {
+                tesseract.delegate = self
+                tesseract.image = imageToRecognize?.g8_blackAndWhite()
+                tesseract.recognize()
+                //ouput recognized text to view
+                textView.text = tesseract.recognizedText
+            }
+        }
     }
 
-    /*
-     imagePickerController -> dictionary functionality for Image Selection, definition and cancelation out of the screen on addPressed
-     */
+    //imagePickerController functions to select image from photo library
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let outImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        
+        //set image variables
+        imageToRecognize = info[UIImagePickerControllerOriginalImage] as? UIImage
         imageSelected = true
+        //dismiss picker and back to add screen
         picker.dismiss(animated: true, completion: nil)
-        
-        /*
-         TESSERACT IMAGE RECOGNITION - create object, assign image and use the object.recognize() functionality to transpose the image to text
-        */
-        if let tesseract = G8Tesseract(language: "eng"){
-            tesseract.delegate = self
-            tesseract.image = outImage.g8_blackAndWhite()
-            tesseract.recognize()
-            /*
-             Feed the resulting output of tesseract.recognize() -> tesseract.recognizedText into the text label of the textView object to test output. In the future we can subsitute this with using this data as a parameter for a function to feed data to a database or storage methodic
-             */
-            textView.text = tesseract.recognizedText
-            
-        }
-        picker.dismiss(animated: true, completion: nil)
-        imageSelected = true                                    //Toggle (UserHasSelectedImage) -> Do not display the actionbar on view return
     }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        //dismiss picker and back to add screen menu
         picker.dismiss(animated: true, completion: nil)
-        //User cancelled image selection -> Move back to HomeVC.
-        performSegue(withIdentifier: "addToHome", sender: nil)
     }
     
-    /*
-     progressImageRecognition -> debugging print functionality, will be used to track how well the nutrient labels are being recognized, they are fed as 2x , blackAndWhite converted.
-     */
+    //ouput recognition progress
     func progressImageRecognition(for tesseract: G8Tesseract!) {
         print("Recognition Progress \(tesseract.progress) %")
-    }
-    
-    //xcode generated function
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     //function for tap gesture
@@ -199,7 +197,7 @@ class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8Tesser
             let itemToPrint = separate(strin: textView.text)
             itemToPrint.serving = Double(servingValue)!
             //output foodItem contents
-            textView2.text = "Nutrient Name/Amount Per Serving/Total:\n" + itemToPrint.printAll()
+            textView2.text = itemToPrint.printAll()
             //delete foodItem
             do {
                 managedObjectContext.delete(itemToPrint)

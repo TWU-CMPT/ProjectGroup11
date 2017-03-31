@@ -14,7 +14,21 @@ public class Goal: NSManagedObject {
 
     //convert goal to string
     func toString() -> String{
-        let result = String(self.amount) + "g of " + self.nutrient!
+        var result = ""
+        let nutName = self.nutrient?.lowercased()
+        
+        if ((nutName == "sodium") || (nutName == "cholesterol"))
+        {
+            result = String(self.amount) + "mg of " + self.nutrient!
+        }
+        else if ((nutName == "vitamin a") || (nutName == "vitamin c") || (nutName == "calcium") || (nutName == "iron"))
+        {
+            result = String(self.amount) + "% of " + self.nutrient!
+        }
+        else
+        {
+            result = String(self.amount) + "g of " + self.nutrient!
+        }
         return result
     }
 }

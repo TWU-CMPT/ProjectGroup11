@@ -30,16 +30,6 @@ class GoalsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         //set date format
         formatter.dateFormat = "MM-dd-yyyy"
-        
-        //load saved goals
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Goal")
-        do {
-            let results = try managedObjectContext.fetch(fetchRequest)
-            goalArray = results as! [Goal]
-        }
-        catch {
-            print("goal fetch error")
-        }
     }
     
     override func didReceiveMemoryWarning() {

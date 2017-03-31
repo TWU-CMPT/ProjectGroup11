@@ -7,9 +7,7 @@
 //
 
 import UIKit
-
-//global array
-var goalArray = [Goal]()
+import CoreData
 
 class GoalsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -23,11 +21,13 @@ class GoalsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        //set up navigation
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+        
         //set date format
         formatter.dateFormat = "MM-dd-yyyy"
     }
@@ -51,7 +51,7 @@ class GoalsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "goalCell")
         cell.textLabel?.text = goalArray[indexPath.row].toString()
-        cell.detailTextLabel?.text = "By: " + formatter.string(from: goalArray[indexPath.row].completedBy as Date)
+        cell.detailTextLabel?.text = "By: " + formatter.string(from: goalArray[indexPath.row].completedBy as! Date)
         return(cell)
     }
     public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
@@ -59,8 +59,15 @@ class GoalsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if editingStyle == UITableViewCellEditingStyle.delete
         {
             //delete and reload table on swipe left and delete
-            goalArray.remove(at: indexPath.row)
-            myTable.reloadData()
+            do {
+                managedObjectContext.delete(goalArray[indexPath.row])
+                try managedObjectContext.save()
+                goalArray.remove(at: indexPath.row)
+                myTable.reloadData()
+            }
+            catch{
+                print("goal delete error")
+            }
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

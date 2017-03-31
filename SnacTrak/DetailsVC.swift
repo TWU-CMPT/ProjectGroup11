@@ -19,6 +19,9 @@ class DetailsVC: UIViewController {
         
         //print details to view
         myLabel.text = details
+        
+        //tint back button red
+        self.navigationController?.navigationBar.tintColor = UIColor.red;
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,9 +29,4 @@ class DetailsVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func backWasPressed(_ sender: UIBarButtonItem){
-        //move back to home view
-        performSegue(withIdentifier: "detailsToHome", sender: nil)
-    }
-
 }

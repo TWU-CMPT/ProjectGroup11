@@ -11,19 +11,25 @@
 		1FB18C5D3C7FCC557DCD2BB2 /* Pods_SnacTrakUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB17AE14E3060B9359A81D4 /* Pods_SnacTrakUITests.framework */; };
 		770739F2B61FE84A75AAA084 /* Pods_SnacTrakTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9346E0FF2DEEC3F55F5D43 /* Pods_SnacTrakTests.framework */; };
 		D31B87481E6CF22D00EE6F34 /* AddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B87471E6CF22D00EE6F34 /* AddVC.swift */; };
-		D31B874A1E6CF4C400EE6F34 /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B87491E6CF4C400EE6F34 /* FoodItem.swift */; };
-		D31B874F1E6CF51A00EE6F34 /* Nutrient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B874E1E6CF51A00EE6F34 /* Nutrient.swift */; };
 		D33E7E431E6A99ED00EDFF87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E7E421E6A99ED00EDFF87 /* AppDelegate.swift */; };
 		D33E7E451E6A99ED00EDFF87 /* TitleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E7E441E6A99ED00EDFF87 /* TitleScreen.swift */; };
 		D33E7E481E6A99ED00EDFF87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D33E7E461E6A99ED00EDFF87 /* Main.storyboard */; };
-		D33E7E4B1E6A99ED00EDFF87 /* SnacTrak.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D33E7E491E6A99ED00EDFF87 /* SnacTrak.xcdatamodeld */; };
 		D33E7E4D1E6A99ED00EDFF87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33E7E4C1E6A99ED00EDFF87 /* Assets.xcassets */; };
 		D33E7E5B1E6A99ED00EDFF87 /* SnacTrakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E7E5A1E6A99ED00EDFF87 /* SnacTrakTests.swift */; };
 		D33E7E661E6A99ED00EDFF87 /* SnacTrakUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E7E651E6A99ED00EDFF87 /* SnacTrakUITests.swift */; };
+		D343F74B1E8DDA41005E8938 /* SnacTrak.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D343F7491E8DDA41005E8938 /* SnacTrak.xcdatamodeld */; };
+		D343F74E1E8DDB0B005E8938 /* Meal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D343F74C1E8DDB0B005E8938 /* Meal+CoreDataClass.swift */; };
+		D343F74F1E8DDB0B005E8938 /* Meal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D343F74D1E8DDB0B005E8938 /* Meal+CoreDataProperties.swift */; };
+		D343F7511E8DEB97005E8938 /* AddMealVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D343F7501E8DEB97005E8938 /* AddMealVC.swift */; };
 		D35BA1C01E6E2D4600386844 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = D35BA1BF1E6E2D4600386844 /* tessdata */; };
+		D39CE2561E8782E3001170B5 /* FoodItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39CE2521E8782E3001170B5 /* FoodItem+CoreDataClass.swift */; };
+		D39CE2571E8782E3001170B5 /* FoodItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39CE2531E8782E3001170B5 /* FoodItem+CoreDataProperties.swift */; };
+		D39CE2581E8782E3001170B5 /* Nutrient+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39CE2541E8782E3001170B5 /* Nutrient+CoreDataClass.swift */; };
+		D39CE2591E8782E3001170B5 /* Nutrient+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39CE2551E8782E3001170B5 /* Nutrient+CoreDataProperties.swift */; };
+		D3A9162C1E87191B00E9B3EC /* Goal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A916261E87191B00E9B3EC /* Goal+CoreDataClass.swift */; };
+		D3A9162D1E87191B00E9B3EC /* Goal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A916271E87191B00E9B3EC /* Goal+CoreDataProperties.swift */; };
 		D3AA98AD1E6D215A009D81C9 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AA98AC1E6D215A009D81C9 /* HomeVC.swift */; };
 		D3AA98AF1E6D6936009D81C9 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AA98AE1E6D6936009D81C9 /* DetailsVC.swift */; };
-		D3CCAFED1E81DC37006D677C /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CCAFEC1E81DC37006D677C /* Goal.swift */; };
 		D3CCAFEF1E81EA72006D677C /* AddGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CCAFEE1E81EA72006D677C /* AddGoalVC.swift */; };
 		D3E0F0641E7EDCAF00F0C0B6 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E0F0631E7EDCAF00F0C0B6 /* SWRevealViewController.m */; };
 		D3E0F06A1E7F02B500F0C0B6 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0F0691E7F02B500F0C0B6 /* MenuVC.swift */; };
@@ -63,13 +69,10 @@
 		C55614BC0273A3A1EEE331A6 /* Pods-SnacTrak.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnacTrak.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnacTrak/Pods-SnacTrak.debug.xcconfig"; sourceTree = "<group>"; };
 		CAB9BBF53FAE35523F15FC50 /* Pods-SnacTrakUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnacTrakUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnacTrakUITests/Pods-SnacTrakUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D31B87471E6CF22D00EE6F34 /* AddVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddVC.swift; sourceTree = "<group>"; };
-		D31B87491E6CF4C400EE6F34 /* FoodItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
-		D31B874E1E6CF51A00EE6F34 /* Nutrient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nutrient.swift; sourceTree = "<group>"; };
 		D33E7E3F1E6A99ED00EDFF87 /* SnacTrak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnacTrak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D33E7E421E6A99ED00EDFF87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D33E7E441E6A99ED00EDFF87 /* TitleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScreen.swift; sourceTree = "<group>"; };
 		D33E7E471E6A99ED00EDFF87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D33E7E4A1E6A99ED00EDFF87 /* SnacTrak.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SnacTrak.xcdatamodel; sourceTree = "<group>"; };
 		D33E7E4C1E6A99ED00EDFF87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D33E7E511E6A99ED00EDFF87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D33E7E561E6A99ED00EDFF87 /* SnacTrakTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnacTrakTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,10 +81,19 @@
 		D33E7E611E6A99ED00EDFF87 /* SnacTrakUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnacTrakUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D33E7E651E6A99ED00EDFF87 /* SnacTrakUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnacTrakUITests.swift; sourceTree = "<group>"; };
 		D33E7E671E6A99ED00EDFF87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D343F74A1E8DDA41005E8938 /* SnacTrak.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SnacTrak.xcdatamodel; sourceTree = "<group>"; };
+		D343F74C1E8DDB0B005E8938 /* Meal+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Meal+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D343F74D1E8DDB0B005E8938 /* Meal+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Meal+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D343F7501E8DEB97005E8938 /* AddMealVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMealVC.swift; sourceTree = "<group>"; };
 		D35BA1BF1E6E2D4600386844 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		D39CE2521E8782E3001170B5 /* FoodItem+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FoodItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D39CE2531E8782E3001170B5 /* FoodItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FoodItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D39CE2541E8782E3001170B5 /* Nutrient+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Nutrient+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D39CE2551E8782E3001170B5 /* Nutrient+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Nutrient+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D3A916261E87191B00E9B3EC /* Goal+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D3A916271E87191B00E9B3EC /* Goal+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D3AA98AC1E6D215A009D81C9 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		D3AA98AE1E6D6936009D81C9 /* DetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
-		D3CCAFEC1E81DC37006D677C /* Goal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		D3CCAFEE1E81EA72006D677C /* AddGoalVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGoalVC.swift; sourceTree = "<group>"; };
 		D3E0F0621E7EDCA100F0C0B6 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		D3E0F0631E7EDCAF00F0C0B6 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -134,16 +146,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		D31B87521E6CF58500EE6F34 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				D31B87491E6CF4C400EE6F34 /* FoodItem.swift */,
-				D31B874E1E6CF51A00EE6F34 /* Nutrient.swift */,
-				D3CCAFEC1E81DC37006D677C /* Goal.swift */,
-			);
-			name = Classes;
-			sourceTree = "<group>";
-		};
 		D31B87531E6CF65C00EE6F34 /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,7 +154,6 @@
 				D3E0F0631E7EDCAF00F0C0B6 /* SWRevealViewController.m */,
 				D33E7E511E6A99ED00EDFF87 /* Info.plist */,
 				D3F150701E6AA1F2004AE54E /* GoogleService-Info.plist */,
-				D33E7E491E6A99ED00EDFF87 /* SnacTrak.xcdatamodeld */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -185,14 +186,15 @@
 				D33E7E421E6A99ED00EDFF87 /* AppDelegate.swift */,
 				D33E7E441E6A99ED00EDFF87 /* TitleScreen.swift */,
 				D3E0F0691E7F02B500F0C0B6 /* MenuVC.swift */,
+				D3AA98AE1E6D6936009D81C9 /* DetailsVC.swift */,
+				D3E0F06D1E7FAE5000F0C0B6 /* AboutVC.swift */,
 				D3CCAFF01E81EAE0006D677C /* Home */,
 				D3CCAFF11E81EAE6006D677C /* Goals */,
 				D3CCAFF21E81EAEB006D677C /* Meals */,
-				D3E0F06D1E7FAE5000F0C0B6 /* AboutVC.swift */,
 				D33E7E461E6A99ED00EDFF87 /* Main.storyboard */,
 				D33E7E4C1E6A99ED00EDFF87 /* Assets.xcassets */,
+				D3A916251E8718F400E9B3EC /* Data */,
 				D35BA1BF1E6E2D4600386844 /* tessdata */,
-				D31B87521E6CF58500EE6F34 /* Classes */,
 				D31B87531E6CF65C00EE6F34 /* Other */,
 			);
 			path = SnacTrak;
@@ -216,12 +218,27 @@
 			path = SnacTrakUITests;
 			sourceTree = "<group>";
 		};
+		D3A916251E8718F400E9B3EC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D343F74C1E8DDB0B005E8938 /* Meal+CoreDataClass.swift */,
+				D343F74D1E8DDB0B005E8938 /* Meal+CoreDataProperties.swift */,
+				D39CE2521E8782E3001170B5 /* FoodItem+CoreDataClass.swift */,
+				D39CE2531E8782E3001170B5 /* FoodItem+CoreDataProperties.swift */,
+				D39CE2541E8782E3001170B5 /* Nutrient+CoreDataClass.swift */,
+				D39CE2551E8782E3001170B5 /* Nutrient+CoreDataProperties.swift */,
+				D3A916261E87191B00E9B3EC /* Goal+CoreDataClass.swift */,
+				D3A916271E87191B00E9B3EC /* Goal+CoreDataProperties.swift */,
+				D343F7491E8DDA41005E8938 /* SnacTrak.xcdatamodeld */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 		D3CCAFF01E81EAE0006D677C /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				D3AA98AC1E6D215A009D81C9 /* HomeVC.swift */,
 				D31B87471E6CF22D00EE6F34 /* AddVC.swift */,
-				D3AA98AE1E6D6936009D81C9 /* DetailsVC.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -239,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				D3E0F06B1E7FAE3600F0C0B6 /* MealsVC.swift */,
+				D343F7501E8DEB97005E8938 /* AddMealVC.swift */,
 			);
 			name = Meals;
 			sourceTree = "<group>";
@@ -540,20 +558,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D39CE2571E8782E3001170B5 /* FoodItem+CoreDataProperties.swift in Sources */,
 				D3E0F0701E7FE71200F0C0B6 /* GoalsVC.swift in Sources */,
+				D343F7511E8DEB97005E8938 /* AddMealVC.swift in Sources */,
+				D343F74B1E8DDA41005E8938 /* SnacTrak.xcdatamodeld in Sources */,
 				D3CCAFEF1E81EA72006D677C /* AddGoalVC.swift in Sources */,
 				D33E7E451E6A99ED00EDFF87 /* TitleScreen.swift in Sources */,
+				D39CE2591E8782E3001170B5 /* Nutrient+CoreDataProperties.swift in Sources */,
 				D3AA98AD1E6D215A009D81C9 /* HomeVC.swift in Sources */,
-				D31B874F1E6CF51A00EE6F34 /* Nutrient.swift in Sources */,
+				D3A9162C1E87191B00E9B3EC /* Goal+CoreDataClass.swift in Sources */,
+				D39CE2561E8782E3001170B5 /* FoodItem+CoreDataClass.swift in Sources */,
 				D33E7E431E6A99ED00EDFF87 /* AppDelegate.swift in Sources */,
 				D3E0F06E1E7FAE5000F0C0B6 /* AboutVC.swift in Sources */,
-				D3CCAFED1E81DC37006D677C /* Goal.swift in Sources */,
+				D343F74E1E8DDB0B005E8938 /* Meal+CoreDataClass.swift in Sources */,
 				D3AA98AF1E6D6936009D81C9 /* DetailsVC.swift in Sources */,
 				D3E0F06A1E7F02B500F0C0B6 /* MenuVC.swift in Sources */,
 				D3E0F06C1E7FAE3600F0C0B6 /* MealsVC.swift in Sources */,
 				D3E0F0641E7EDCAF00F0C0B6 /* SWRevealViewController.m in Sources */,
-				D33E7E4B1E6A99ED00EDFF87 /* SnacTrak.xcdatamodeld in Sources */,
-				D31B874A1E6CF4C400EE6F34 /* FoodItem.swift in Sources */,
+				D3A9162D1E87191B00E9B3EC /* Goal+CoreDataProperties.swift in Sources */,
+				D39CE2581E8782E3001170B5 /* Nutrient+CoreDataClass.swift in Sources */,
+				D343F74F1E8DDB0B005E8938 /* Meal+CoreDataProperties.swift in Sources */,
 				D31B87481E6CF22D00EE6F34 /* AddVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -833,12 +857,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		D33E7E491E6A99ED00EDFF87 /* SnacTrak.xcdatamodeld */ = {
+		D343F7491E8DDA41005E8938 /* SnacTrak.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				D33E7E4A1E6A99ED00EDFF87 /* SnacTrak.xcdatamodel */,
+				D343F74A1E8DDA41005E8938 /* SnacTrak.xcdatamodel */,
 			);
-			currentVersion = D33E7E4A1E6A99ED00EDFF87 /* SnacTrak.xcdatamodel */;
+			currentVersion = D343F74A1E8DDA41005E8938 /* SnacTrak.xcdatamodel */;
 			path = SnacTrak.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

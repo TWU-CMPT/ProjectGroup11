@@ -12,10 +12,10 @@ import CoreData
 @objc(Meal)
 public class Meal: NSManagedObject {
 
+    //print meal
     func printMeal() -> String {
         var result = "Meal Name:\n" + self.name! + "\n\n"
-        let nutArray = ["Calories", "Fat", "Cholesterol", "Sodium", "Carbohydrate", "Fibre", "Sugars", "Protein", "Vitamin A", "Vitamin C", "Calcium", "Iron"]
-        
+        let nutArray = ["Calories", "Fat", "Cholesterol", "Sodium", "Carbohydrate", "Fibre", "Sugars", "Protein", "Vitamin A", "Vitamin C", "Calcium", "Iron", "Potassium"]
         result += "Included Food Items:\n"
         if self.itemNames.count > 0
         {
@@ -24,7 +24,6 @@ public class Meal: NSManagedObject {
                 result += self.itemNames[i] + "\n"
             }
         }
-        
         result += "\nNutrient Name/Total:\n"
         for j in 0...nutArray.count-1
         {
@@ -33,8 +32,8 @@ public class Meal: NSManagedObject {
             {
                 if totals[j] > 0
                 {
-                    //assumed code to instantiate meal will store totals in correct order
-                    if ((j == 2) || (j == 3))
+                    //assumed totals correspond to nutArray
+                    if ((j == 2) || (j == 3) || (j == 12))
                     {
                         result += nutArray[j] + " " + String(totals[j]) + "mg\n"
                     }
@@ -46,7 +45,6 @@ public class Meal: NSManagedObject {
                     {
                         result += nutArray[j] + " " + String(totals[j]) + "g\n"
                     }
-                    
                 }
             }
         }

@@ -17,9 +17,9 @@ class AddMealVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UIT
     //initializing date formatter
     let formatter = DateFormatter()
     //array of nutrient names corresponding to totalsToAdd
-    let nutrientNames = ["Calories", "Fat", "Cholesterol", "Sodium", "Carbohydrate", "Fibre", "Sugars", "Protein", "Vitamin A", "Vitamin C", "Calcium", "Iron"]
+    let nutrientNames = ["Calories", "Fat", "Cholesterol", "Sodium", "Carbohydrate", "Fibre", "Sugars", "Protein", "Vitamin A", "Vitamin C", "Calcium", "Iron", "Potassium"]
     //array of nutrient amount totals corresponding to nutrientNames
-    var totalsToAdd = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    var totalsToAdd = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
     //array to hold names of selected food items
     var itemsToAdd = [String]()
     //array to keep track of selected cells
@@ -27,14 +27,10 @@ class AddMealVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
         //set date format
         formatter.dateFormat = "MM-dd-yyyy"
-        
-        //allow for multiplec cell selection
+        //allow for multiple cell selection
         myTable.allowsMultipleSelection = true
-        
         //initialize selection array
         if array.count > 0
         {
@@ -43,14 +39,8 @@ class AddMealVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UIT
                 selectedCells.append(false)
             }
         }
-        
         //set up for return key to end editing
         textField.delegate = self
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     //when editing name return key will dismiss keyboard
@@ -65,7 +55,6 @@ class AddMealVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UIT
     }
     
     @IBAction func doneWasPressed(_ sender: UIBarButtonItem) {
-        
         //if name is entered
         if (textField.text != "")
         {
@@ -83,8 +72,7 @@ class AddMealVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UIT
                     {
                         //add selected fooditem names to itemsToAdd
                         itemsToAdd.append(array[i].name!)
-                        
-                        //add selected fooditem nutrient amount to totalsToAdd
+                        //add selected fooditem nutrient amounts to totalsToAdd
                         let nutArray = Array(array[i].nutrients)
                         if nutArray.count > 0
                         {
@@ -107,7 +95,6 @@ class AddMealVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UIT
             //set itemNames and totals
             newMeal.itemNames = itemsToAdd
             newMeal.totals = totalsToAdd
-            
             //add meal
             do {
                 try managedObjectContext.save()
@@ -116,10 +103,10 @@ class AddMealVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UIT
             catch{
                 print("error")
             }
-            
             //return to meals view
             performSegue(withIdentifier: "addToMeals", sender: nil)
         }
+        //if no name is entered
         else
         {
             let alertController = UIAlertController(title: "Error message:", message: "You need to set a name first!", preferredStyle: UIAlertControllerStyle.alert)
@@ -127,16 +114,13 @@ class AddMealVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UIT
             alertController.view.tintColor = UIColor.red
             self.present(alertController, animated: true, completion: nil)
         }
-        
     }
     
     //table view functions
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return(array.count)
     }
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
         cell.textLabel?.text = array[indexPath.row].name
         cell.detailTextLabel?.text = "Date added: " + formatter.string(from: array[indexPath.row].date as! Date)
@@ -151,7 +135,6 @@ class AddMealVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UIT
     }
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath)?.accessoryType = .none
-        
         selectedCells[indexPath.row] = false
     }
     

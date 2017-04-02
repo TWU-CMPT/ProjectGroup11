@@ -16,39 +16,30 @@ class AddGoalVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UI
     @IBOutlet weak var datePicker: UIDatePicker!
     
     //array to populate picker view
-    let nutrients = ["Calories (g)", "Calcium (%)", "Carbohydrate (g)", "Cholesterol (mg)", "Fat (g)", "Fibre (g)", "Iron (%)", "Protein (g)", "Sodium (mg)", "Sugars (g)", "Vitamin A (%)", "Vitamin C (%)"]
+    let nutrients = ["Calories (g)", "Calcium (%)", "Carbohydrate (g)", "Cholesterol (mg)", "Fat (g)", "Fibre (g)", "Iron (%)", "Potassium (mg)", "Protein (g)", "Sodium (mg)", "Sugars (g)", "Vitamin A (%)", "Vitamin C (%)"]
     //array to get name
-    let nutrientNames = ["Calories", "Calcium", "Carbohydrate", "Cholesterol", "Fat", "Fibre", "Iron", "Protein", "Sodium", "Sugars", "Vitamin A", "Vitamin C"]
+    let nutrientNames = ["Calories", "Calcium", "Carbohydrate", "Cholesterol", "Fat", "Fibre", "Iron", "Potassium", "Protein", "Sodium", "Sugars", "Vitamin A", "Vitamin C"]
     //default picker position
-    var pickerRow = 5
+    var pickerRow = 6
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
         //set picker view starting row
-        nutrientPicker.selectRow(5, inComponent: 0, animated: true)
-        
+        nutrientPicker.selectRow(6, inComponent: 0, animated: true)
         //limit date picker range
         datePicker.minimumDate = Date()
         datePicker.maximumDate = Calendar.current.date(byAdding: .month, value: 1, to: Date())
-        
         //set up for tap gesture and return key to end editing
         amountGiven.delegate = self
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddVC.dismissKeyboard))
         view.addGestureRecognizer(tap)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     //function for tap gesture
     func dismissKeyboard() {
         view.endEditing(true)
     }
-    //when editing amount return key will dismiss keyboard, tap gesture also works
+    //when editing amount return key will dismiss keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
@@ -74,7 +65,6 @@ class AddGoalVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UI
     }
     
     @IBAction func doneWasPressed(_ sender: UIBarButtonItem) {
-
         //if incorrect amount input
         if ((Double(amountGiven.text!) == nil) || (Double(amountGiven.text!)! < 1))
         {
@@ -88,11 +78,9 @@ class AddGoalVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UI
             //create goal
             let entityGoal = NSEntityDescription.entity(forEntityName: "Goal", in: managedObjectContext)
             let newGoal = NSManagedObject(entity: entityGoal!, insertInto: managedObjectContext) as! Goal
-            
             newGoal.nutrient = nutrientNames[pickerRow]
             newGoal.amount = Double(amountGiven.text!)!
             newGoal.completedBy = datePicker.date as NSDate?
-            
             //add goal
             do {
                 try managedObjectContext.save()
@@ -101,10 +89,9 @@ class AddGoalVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UI
             catch{
                 print("goal add error")
             }
-            
             //return to goals view
             performSegue(withIdentifier: "addToGoals", sender: nil)
-            
         }
     }
+    
 }

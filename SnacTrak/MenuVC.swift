@@ -12,8 +12,6 @@ class MenuVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-
         //preserve selection between presentations
         self.clearsSelectionOnViewWillAppear = false
     }
@@ -24,7 +22,6 @@ class MenuVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         //if sign out is pressed
         if (indexPath.row == 5)
         {

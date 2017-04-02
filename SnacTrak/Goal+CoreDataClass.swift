@@ -13,15 +13,14 @@ import CoreData
 public class Goal: NSManagedObject {
 
     //convert goal to string
-    func toString() -> String{
+    func toString() -> String {
         var result = ""
-        let nutName = self.nutrient?.lowercased()
-        
-        if ((nutName == "sodium") || (nutName == "cholesterol"))
+        let nutName = self.nutrient
+        if ((nutName == "Sodium") || (nutName == "Cholesterol") || (nutName == "Potassium"))
         {
             result = String(self.amount) + "mg of " + self.nutrient!
         }
-        else if ((nutName == "vitamin a") || (nutName == "vitamin c") || (nutName == "calcium") || (nutName == "iron"))
+        else if ((nutName == "Vitamin A") || (nutName == "Vitamin C") || (nutName == "Calcium") || (nutName == "Iron"))
         {
             result = String(self.amount) + "% of " + self.nutrient!
         }
@@ -31,4 +30,5 @@ public class Goal: NSManagedObject {
         }
         return result
     }
+    
 }

@@ -19,22 +19,14 @@ class GoalsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
         //set up navigation
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        
         //set date format
         formatter.dateFormat = "MM-dd-yyyy"
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func addWasPressed(_ sender: UIBarButtonItem) {
@@ -43,19 +35,16 @@ class GoalsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
 
     //table view functions
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return(goalArray.count)
     }
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "goalCell")
         cell.textLabel?.text = goalArray[indexPath.row].toString()
         cell.detailTextLabel?.text = "By: " + formatter.string(from: goalArray[indexPath.row].completedBy as! Date)
         return(cell)
     }
-    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
-    {
+    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete
         {
             //delete and reload table on swipe left and delete
@@ -72,8 +61,8 @@ class GoalsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
-        //segue to graphical goal progress display - Version 3
+        //segue to graphical goal progress display
+        //...v3
     }
 
 }

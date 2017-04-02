@@ -16,15 +16,12 @@ class MealsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
         //set up navigation
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        
         //load saved meals
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Meal")
         do {
@@ -35,11 +32,6 @@ class MealsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             print("meal fetch error")
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     @IBAction func addWasPressed(_ sender: UIBarButtonItem) {
         //move to add view
@@ -47,18 +39,15 @@ class MealsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     //table view functions
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return(mealArray.count)
     }
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "mealCell")
         cell.textLabel?.text = mealArray[indexPath.row].name
         return(cell)
     }
-    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
-    {
+    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete
         {
             //delete and reload table on swipe left and delete
@@ -88,4 +77,5 @@ class MealsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             DestViewController.details = sender as! String
         }
     }
+    
 }

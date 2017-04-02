@@ -50,6 +50,12 @@ class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8Tesser
             actionSheet.view.tintColor = UIColor.red
             actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: {(action:UIAlertAction) in
                 //redirect to camera
+                if UIImagePickerController.isSourceTypeAvailable(.camera){
+                    imagePickerController.sourceType = .camera
+                    self.present(imagePickerController, animated: true, completion: nil)
+                }else{
+                    print("Camera is not currently available...")
+                }
             }))
             actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: {(action:UIAlertAction) in
                 //present photo library

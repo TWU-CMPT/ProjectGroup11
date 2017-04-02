@@ -68,7 +68,11 @@ class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8Tesser
             }))
             actionSheet.addAction(UIAlertAction(title: "Manual Entry", style: .default, handler: {(action:UIAlertAction) in
                 //Get rid of loading text and dismiss action sheet
+<<<<<<< HEAD
                 self.textView.text = "Calories 0g\nFat 0g\nCholesterol 0mg\nSodium 0mg\nCarbohydrate 0g\nFibre 0g\nSugars 0g\nProtein 0g\nVitamin A 0%\nVitamin C 0%\nCalcium 0%\nIron 0%\n"
+=======
+                self.textView.text = "Calories 0g\nFat 0g\nCholesterol 0mg\nSodium 0mg\nCarbohydrate 0g\nFibre 0g\nSugars 0g\nProtein 0g\nVitamin A 0%\nVitamin C 0%\nCalcium 0%\nIron 0%\nPotassium 0mg\n"
+>>>>>>> origin/master
             }))
             actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {(action:UIAlertAction) in
                 //return to home view
@@ -228,50 +232,131 @@ class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8Tesser
         newItem.date = NSDate()
         
         //array of nutrient strings to look for
-        let nutrientNames: [String] = ["Calories", "Fat", "Cholesterol", "Sodium", "Carbohydrate", "Fibre", "Sugars", "Protein"]
-        var n = 0 //counter to work through nutrient names
+        let nutrientNames: [String] = ["Calories", "Fat", "Cholesterol", "Sodium", "Carbohydrate", "Fibre", "Sugars", "Protein", "Vitamin A", "Vitamin C", "Calcium", "Iron", "Potassium"]
+        var n = 0
         
-        //break up translated string by line
-        let lineArray = strin.components(separatedBy: "\n")
-        for i in 0...lineArray.count - 1
+        // array of bools to indicate if nutrient was found
+        var found: [Bool] = [false, false, false, false, false, false, false, false, false, false, false, false, false]
+        
+        // array of bools to indicate if nutrient has been previously searched for
+        // this is so the algorithm does not continue to look for a nutrient that is not present in input
+        var prevSearched: [Bool] = [false, false, false, false, false, false, false, false, false, false, false, false, false]
+        var name: String
+        repeat
         {
-            //break up line by token
-            let tokenArray = lineArray[i].components(separatedBy: " ")
-            for j in 0...tokenArray.count - 1
+            //set n to equal nutrient not yet found (will begin at 0 initially)
+            n = findNotFound(foundArray: found)
+            if( n == 99){
+                break
+            }
+            
+            if(n < 13)
             {
-                //look for nutrients while not all are yet found
-                if(n < 8)
+                // if nutrient has been previously searched for
+                if(prevSearched[n] == true)
                 {
-                    var scannedString: String
-                    scannedString = tokenArray[j]
-                    if ( matchMajority(nutrient: nutrientNames[n], scannedN: scannedString ) )
+                    //Set to indicate that it doesnt exist in input
+                    found[n] = true
+                    //Reset n to equal next not found nutrient
+                    n = findNotFound(foundArray: found)
+                    if( n == 99){
+                        break
+                    }                }
+                //Set new n to indicate it has been previously searched for
+                prevSearched[n] = true
+            }
+            
+            //break up translated string by line
+            let lineArray = strin.components(separatedBy: "\n")
+            for i in 0...lineArray.count - 1
+            {
+                //break up line by token
+                let tokenArray = lineArray[i].components(separatedBy: " ")
+                for j in 0...tokenArray.count - 1
+                {
+                    //look for nutrients while not all are yet found
+                    if(n < 13)
                     {
-                        //set nutrient name
-                        let name = nutrientNames[n]
-                        //check subsequent tokens on line for a corresponding integer amount
-                        let amount = getAmount(tokenArray: tokenArray, j: j)
-                        //add nutrient to foodItem if not 0 amount
-                        if (amount != 0)
+                        var scannedString: String
+                        
+                        scannedString = tokenArray[j]
+                        //if the majority of letters match current nutrient & nutrient has not already been found
+                        if (( matchMajority(nutrient: nutrientNames[n], scannedN: scannedString )) && (found[n] == false ))
                         {
+<<<<<<< HEAD
                             let entityNutrient = NSEntityDescription.entity(forEntityName: "Nutrient", in: managedObjectContext)
                             let newNutrient = NSManagedObject(entity: entityNutrient!, insertInto: managedObjectContext) as! Nutrient
                             newNutrient.name = name
                             newNutrient.amount = amount
                             newItem.addToNutrients(newNutrient)
+=======
+                            // if current nutrient is "Vitamin A" or "C"
+                            if((n == 8) || (n == 9)){
+                                // Get letter at next element
+                                scannedString = tokenArray[j + 1]
+                                if( n == 8 && matchMajority(nutrient: "A", scannedN: scannedString)){
+                                    name = nutrientNames[n]
+                                }
+                                if( n == 9 && matchMajority(nutrient: "C", scannedN: scannedString)){
+                                    name = nutrientNames[n]
+                                }
+                                else{
+                                    n += 1
+                                    break
+                                }
+                            }
+                            
+                            //set nutrient name
+                            name = nutrientNames[n]
+                            
+                            //check subsequent tokens on line for a corresponding integer amount
+                            let amount = getAmount(tokenArray: tokenArray, j: j)
+                            
+                            // set bool to indicate nutrient was found
+                            found[n] = true
+                            
+                            //add nutrient to foodItem if not 0 amount
+                            if (amount != 0)
+                            {
+                                let entityNutrient = NSEntityDescription.entity(forEntityName: "Nutrient", in: managedObjectContext)
+                                let newNutrient = NSManagedObject(entity: entityNutrient!, insertInto: managedObjectContext) as! Nutrient
+                                newNutrient.name = name
+                                newNutrient.amount = amount
+                                newItem.addToNutrients(newNutrient)
+                            }
+                            //increment n because nutreintNames[n] has been found
+                            n += 1
+                            //stop looping once found a nutrient on a line
+                            if(n < 8)
+                            {
+                                break
+                            }
+>>>>>>> origin/master
                         }
-                        //increment n because nutreintNames[n] has been found
-                        n += 1
-                        //stop looping once found a nutrient on a line
-                        break
+                        
                     }
                 }
             }
-        }
+        }while( n < 99) //if n is 99 then all nutrients that are present are found
         
-        //return foodItem
         return newItem
     }
-
+    
+    //Finds the element of a nutrient that has not yet been found
+    func findNotFound(foundArray: [Bool]) -> Int{
+        
+        for index in 0...foundArray.count - 1
+        {
+            let fnd = foundArray[index]
+            //check if current nutrient has been set to found
+            if(fnd == false){
+                return index
+            }
+        }
+        //return 99 if all nutrients have been found
+        return 99
+    }
+    
     //check subsequent tokens on line for a corresponding integer amount
     func getAmount(tokenArray: [String], j: Int) -> Double{
         var amount = ""
@@ -280,11 +365,12 @@ class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8Tesser
             //recognize integers with attached unit fix
             amount = tokenArray[k].replacingOccurrences(of: "g", with: "")
             amount = amount.replacingOccurrences(of: "m", with: "")
+            amount = amount.replacingOccurrences(of: "%", with: "")
             // if tesseract mistook 0g for "09"
             if(amount == "09"){
                 return 0
             }
-            //check for valid number
+                //check for valid number
             else if Double(amount) != nil
             {
                 return Double(amount)!
@@ -296,7 +382,15 @@ class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8Tesser
     //finds out if 2 strings have a majority of matching characters
     func matchMajority(nutrient: String, scannedN: String) -> Bool{
         var numMatched = 0 //counter for characters matched
-        let majority = (nutrient.characters.count) / 2 //50% of letters in String to be scanned
+        var majority: Int
+        
+        //if nutrient is one of these then extra characters are required to ensure they are correct
+        if(nutrient == "Fat" || nutrient == "Calcium"){
+            majority = ((nutrient.characters.count) / 2) + 1
+        }
+        else{
+            majority = (nutrient.characters.count) / 2 //50% of letters in String to be scanned
+        }
         var count: Int //the number of letters to scan through
         
         //find out which word is the smaller one
@@ -311,15 +405,15 @@ class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8Tesser
         var aa = Array(nutrient.uppercased().characters)
         var ba = Array(scannedN.uppercased().characters)
         
-        if(count > 0){
+        if(count > 0){  
             //search through each letter
             for index in 0...count - 1{
                 var a: Character
                 var b: Character
-                
+
                 a = aa[index]
                 b = ba[index]
-                
+
                 if (a == b){
                     //increment if letters match
                     numMatched += 1

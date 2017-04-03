@@ -18,6 +18,10 @@ class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8Tesser
     @IBOutlet weak var textView2: UITextView!
     @IBOutlet weak var update: UIButton!
     var imageSelected: Bool = false //check whether the user has already selected an image
+    var itemSelected: Bool = false //check whether the user has already selected an existing or preset item
+    var nameSelected: String = "" //name of selected item
+    var servingSelected: Double = 1 //serving of selected item
+    var infoSelected: String = "" //nutrients of selected item
     var servingValue = "1" //set default serving value
     var imageToRecognize: UIImage? = nil //image for tesseract
     
@@ -40,7 +44,7 @@ class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8Tesser
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //set up selection menu
-        if imageSelected == false {
+        if imageSelected == false && itemSelected == false {
             //set up photo library option
             let imagePickerController = UIImagePickerController()
             imagePickerController.delegate = self
@@ -62,8 +66,16 @@ class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8Tesser
                 imagePickerController.sourceType = .photoLibrary
                 self.present(imagePickerController, animated: true, completion: nil)
             }))
+            actionSheet.addAction(UIAlertAction(title: "Use Existing", style: .default, handler: {(action:UIAlertAction) in
+                //move to existing view
+                self.performSegue(withIdentifier: "addToExisting", sender: nil)
+            }))
+            actionSheet.addAction(UIAlertAction(title: "Use Preset", style: .default, handler: {(action:UIAlertAction) in
+                //move to preset view
+                self.performSegue(withIdentifier: "addToPreset", sender: nil)
+            }))
             actionSheet.addAction(UIAlertAction(title: "Manual Entry", style: .default, handler: {(action:UIAlertAction) in
-                //Get rid of loading text and dismiss action sheet
+                //set loading text for manual entry
                 self.textView.text = "Calories 0g\nFat 0g\nCholesterol 0mg\nSodium 0mg\nCarbohydrate 0g\nFibre 0g\nSugars 0g\nProtein 0g\nVitamin A 0%\nVitamin C 0%\nCalcium 0%\nIron 0%\nPotassium 0mg\n"
             }))
             actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {(action:UIAlertAction) in
@@ -71,6 +83,13 @@ class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8Tesser
                 self.performSegue(withIdentifier: "addToHome", sender: nil)
             }))
             self.present(actionSheet, animated: true, completion: nil)
+        }
+        else if itemSelected == true
+        {
+                //use index to populate fields
+                nameText.text = nameSelected
+                servingText.text = String(format: "%g", servingSelected)
+                textView.text = infoSelected
         }
     }
     

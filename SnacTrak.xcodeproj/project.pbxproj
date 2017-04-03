@@ -10,6 +10,9 @@
 		061907CD1F25CB60E56C06E2 /* Pods_SnacTrak.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CC74676F28AAD6F880E49E /* Pods_SnacTrak.framework */; };
 		1FB18C5D3C7FCC557DCD2BB2 /* Pods_SnacTrakUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB17AE14E3060B9359A81D4 /* Pods_SnacTrakUITests.framework */; };
 		770739F2B61FE84A75AAA084 /* Pods_SnacTrakTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9346E0FF2DEEC3F55F5D43 /* Pods_SnacTrakTests.framework */; };
+		D31A804B1E918DE5009587C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D31A804A1E918DE5009587C3 /* LaunchScreen.storyboard */; };
+		D31A804D1E9191E2009587C3 /* ExistingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31A804C1E9191E2009587C3 /* ExistingVC.swift */; };
+		D31A804F1E91BBA4009587C3 /* PresetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31A804E1E91BBA4009587C3 /* PresetVC.swift */; };
 		D31B87481E6CF22D00EE6F34 /* AddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31B87471E6CF22D00EE6F34 /* AddVC.swift */; };
 		D33E7E431E6A99ED00EDFF87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E7E421E6A99ED00EDFF87 /* AppDelegate.swift */; };
 		D33E7E451E6A99ED00EDFF87 /* TitleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E7E441E6A99ED00EDFF87 /* TitleScreen.swift */; };
@@ -68,6 +71,9 @@
 		9F21C912FBE3C9806B23D0DE /* Pods-SnacTrakUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnacTrakUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnacTrakUITests/Pods-SnacTrakUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C55614BC0273A3A1EEE331A6 /* Pods-SnacTrak.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnacTrak.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnacTrak/Pods-SnacTrak.debug.xcconfig"; sourceTree = "<group>"; };
 		CAB9BBF53FAE35523F15FC50 /* Pods-SnacTrakUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnacTrakUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnacTrakUITests/Pods-SnacTrakUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D31A804A1E918DE5009587C3 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D31A804C1E9191E2009587C3 /* ExistingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExistingVC.swift; sourceTree = "<group>"; };
+		D31A804E1E91BBA4009587C3 /* PresetVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresetVC.swift; sourceTree = "<group>"; };
 		D31B87471E6CF22D00EE6F34 /* AddVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddVC.swift; sourceTree = "<group>"; };
 		D33E7E3F1E6A99ED00EDFF87 /* SnacTrak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnacTrak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D33E7E421E6A99ED00EDFF87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -192,6 +198,7 @@
 				D3CCAFF11E81EAE6006D677C /* Goals */,
 				D3CCAFF21E81EAEB006D677C /* Meals */,
 				D33E7E461E6A99ED00EDFF87 /* Main.storyboard */,
+				D31A804A1E918DE5009587C3 /* LaunchScreen.storyboard */,
 				D33E7E4C1E6A99ED00EDFF87 /* Assets.xcassets */,
 				D3A916251E8718F400E9B3EC /* Data */,
 				D35BA1BF1E6E2D4600386844 /* tessdata */,
@@ -239,6 +246,8 @@
 			children = (
 				D3AA98AC1E6D215A009D81C9 /* HomeVC.swift */,
 				D31B87471E6CF22D00EE6F34 /* AddVC.swift */,
+				D31A804C1E9191E2009587C3 /* ExistingVC.swift */,
+				D31A804E1E91BBA4009587C3 /* PresetVC.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -393,6 +402,7 @@
 				D3F150711E6AA1F2004AE54E /* GoogleService-Info.plist in Resources */,
 				D35BA1C01E6E2D4600386844 /* tessdata in Resources */,
 				D33E7E4D1E6A99ED00EDFF87 /* Assets.xcassets in Resources */,
+				D31A804B1E918DE5009587C3 /* LaunchScreen.storyboard in Resources */,
 				D33E7E481E6A99ED00EDFF87 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -563,6 +573,7 @@
 				D343F7511E8DEB97005E8938 /* AddMealVC.swift in Sources */,
 				D343F74B1E8DDA41005E8938 /* SnacTrak.xcdatamodeld in Sources */,
 				D3CCAFEF1E81EA72006D677C /* AddGoalVC.swift in Sources */,
+				D31A804D1E9191E2009587C3 /* ExistingVC.swift in Sources */,
 				D33E7E451E6A99ED00EDFF87 /* TitleScreen.swift in Sources */,
 				D39CE2591E8782E3001170B5 /* Nutrient+CoreDataProperties.swift in Sources */,
 				D3AA98AD1E6D215A009D81C9 /* HomeVC.swift in Sources */,
@@ -576,6 +587,7 @@
 				D3E0F06C1E7FAE3600F0C0B6 /* MealsVC.swift in Sources */,
 				D3E0F0641E7EDCAF00F0C0B6 /* SWRevealViewController.m in Sources */,
 				D3A9162D1E87191B00E9B3EC /* Goal+CoreDataProperties.swift in Sources */,
+				D31A804F1E91BBA4009587C3 /* PresetVC.swift in Sources */,
 				D39CE2581E8782E3001170B5 /* Nutrient+CoreDataClass.swift in Sources */,
 				D343F74F1E8DDB0B005E8938 /* Meal+CoreDataProperties.swift in Sources */,
 				D31B87481E6CF22D00EE6F34 /* AddVC.swift in Sources */,
@@ -729,6 +741,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "SnacTrak-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -744,6 +757,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SnacTrak-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -86,7 +86,6 @@ class AddMealVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UIT
                                         break
                                     }
                                 }
-                                
                             }
                         }
                     }

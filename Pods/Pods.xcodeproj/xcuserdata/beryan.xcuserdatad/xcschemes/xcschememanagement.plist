@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>CorePlot.xcscheme</key>
+		<key>Charts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -62,12 +62,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>910BB080F30E86371EF9F606B381587E</key>
+		<key>AC085E83E497929BACFE4FEE32102D0F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AC085E83E497929BACFE4FEE32102D0F</key>
+		<key>ACCDCACB76B70E03642D2660FF72CF37</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,12 +77,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C5E52BDA29A5C2A4B2B11075E99F2D84</key>
+		<key>E0F36FF74A35B7B83CE8D59271E420D9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DE8C7C227ACE26864DC8DA02CCA66BAA</key>
+		<key>F307B842FF76B2DE6C55DB67C0885325</key>
 		<dict>
 			<key>primary</key>
 			<true/>

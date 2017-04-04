@@ -31,4 +31,9 @@ public class Goal: NSManagedObject {
         return result
     }
     
+    //get amount needed for completion
+    func getNeed(i: Int) -> Double {
+            return goalArray[i].amount - goalArray[i].progress
+    }
+    
 }

@@ -447,9 +447,6 @@ class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8Tesser
                 }
             }
         }
-        
-        
-        
     }
     
 }

@@ -70,7 +70,7 @@ class GoalsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if (segue.identifier == "goalsToDisplay")
         {
             let DestViewController = segue.destination as! DisplayVC
-            DestViewController.selectedGoal = sender as! Int
+            DestViewController.gdetails = sender as! Int
         }
     }
 

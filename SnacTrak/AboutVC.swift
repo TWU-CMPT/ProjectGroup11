@@ -22,4 +22,30 @@ class AboutVC: UIViewController {
         }
     }
 
+    @IBAction func link1WasPressed(_ sender: Any) {
+        let url = URL(string: "http://teambear.scarletflight.com")!
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+    }
+    
+    @IBAction func link2WasPressed(_ sender: Any) {
+        let url = URL(string: "http://www.sfu.ca/students/health/")!
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+    }
+    
+    @IBAction func link3WasPressed(_ sender: Any) {
+        let url = URL(string: "https://icons8.com/")!
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+    }
 }

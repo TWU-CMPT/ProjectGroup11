@@ -62,7 +62,16 @@ class GoalsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         //segue to graphical goal progress display
-        //...v3
+        performSegue(withIdentifier: "goalsToDisplay", sender: indexPath.row)
+    }
+    
+    //prepare function to pass selected data for segue to display view
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "goalsToDisplay")
+        {
+            let DestViewController = segue.destination as! DisplayVC
+            DestViewController.selectedGoal = sender as! Int
+        }
     }
 
 }

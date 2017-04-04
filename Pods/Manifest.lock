@@ -1,4 +1,5 @@
 PODS:
+  - CorePlot (2.2)
   - FirebaseAnalytics (3.7.0):
     - FirebaseCore (~> 3.5)
     - FirebaseInstanceID (~> 1.0)
@@ -36,10 +37,12 @@ PODS:
   - TesseractOCRiOS (4.0.0)
 
 DEPENDENCIES:
+  - CorePlot (~> 2.2)
   - Google/SignIn
   - TesseractOCRiOS (= 4.0.0)
 
 SPEC CHECKSUMS:
+  CorePlot: cbe0c6e14220705e32e06a89c7d6a5a908b7d7d8
   FirebaseAnalytics: 0d1b7d81d5021155be37702a94ba1ec16d45365d
   FirebaseCore: 225d40532489835a034b8f4e2c9c87fbf4f615a2
   FirebaseInstanceID: 2d0518b1378fe9d685ef40cbdd63d2fdc1125339
@@ -50,6 +53,6 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
   TesseractOCRiOS: 90638afbe43d082433f2e76b384c7901d23956df
 
-PODFILE CHECKSUM: 7c1ba2d23bf4e85dd85773f13da39b5b025eacbb
+PODFILE CHECKSUM: 9e893b16c543d47744e1bae229a0581fb45a0247
 
 COCOAPODS: 1.2.0

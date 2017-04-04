@@ -86,7 +86,7 @@ class AddGoalVC: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UI
                 try managedObjectContext.save()
                 goalArray.append(newGoal)
             }
-            catch{
+            catch {
                 print("goal add error")
             }
             //return to goals view

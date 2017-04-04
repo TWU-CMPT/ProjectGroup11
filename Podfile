@@ -8,6 +8,7 @@ target 'SnacTrak' do
   # Pods for SnacTrak
   pod ‘Google/SignIn’
   pod ‘TesseractOCRiOS', '4.0.0'
+  pod 'CorePlot', '~> 2.2'
 
   target 'SnacTrakTests' do
     inherit! :search_paths

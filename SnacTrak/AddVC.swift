@@ -435,11 +435,21 @@ class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8Tesser
                         {
                             //update progress amount
                             goalArray[i].progress += nutArray[j].amount * item.serving
+                            //save update
+                            do {
+                                try managedObjectContext.save()
+                            }
+                            catch {
+                                print("goal update error")
+                            }
                         }
                     }
                 }
             }
         }
+        
+        
+        
     }
     
 }

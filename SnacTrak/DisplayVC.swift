@@ -33,7 +33,7 @@ class DisplayVC: UIViewController {
     //create chart
     func setChart() {
         var dataEntries: [ChartDataEntry] = []
-        var amounts : [Double] = [(goalArray[gdetails].getNeed(i: gdetails))/goalArray[gdetails].amount * 100, goalArray[gdetails].progress/goalArray[gdetails].amount * 100]
+        var amounts : [Double] = [(goalArray[gdetails].getNeed())/goalArray[gdetails].amount * 100, goalArray[gdetails].progress/goalArray[gdetails].amount * 100]
         var labels : [String] = ["Goal (%)", "Progress (%)"]
         var info = ""
         for i in 0..<2
@@ -45,7 +45,7 @@ class DisplayVC: UIViewController {
         let pieChartData = PieChartData(dataSet: pieChartDataSet)
         chart.data = pieChartData
         chart.chartDescription?.text = ""
-        info = "Still Need: " + String(goalArray[gdetails].getNeed(i: gdetails)) + getUnits()
+        info = "Still Need: " + String(goalArray[gdetails].getNeed()) + getUnits()
         goalLabel.text = info
         var colors: [UIColor] = []
         var color = UIColor.lightGray

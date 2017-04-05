@@ -7,6 +7,8 @@
 //
 
 import XCTest
+import CoreData
+@testable import SnacTrak
 
 class SnacTrakUITests: XCTestCase {
         
@@ -28,9 +30,73 @@ class SnacTrakUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testMenu() {
+        let app = XCUIApplication()
+        //offline use
+        app.buttons["Use Offline"].tap()
+        //menuNavigation
+        sleep(1)
+        XCTAssert(app.navigationBars["Food Items"].exists)
+        app.navigationBars["Food Items"].buttons["More 50"].tap()
+        app.tables.staticTexts["Goals"].tap()
+        sleep(1)
+        XCTAssert(app.navigationBars["Goals"].exists)
+        app.navigationBars["Goals"].buttons["More 50"].tap()
+        app.tables.staticTexts["Meals"].tap()
+        sleep(1)
+        XCTAssert(app.navigationBars["Meals"].exists)
+        app.navigationBars["Meals"].buttons["More 50"].tap()
+        app.tables.staticTexts["About"].tap()
+        sleep(1)
+        XCTAssert(app.navigationBars["About"].exists)
+        app.navigationBars["About"].buttons["More 50"].tap()
+        app.tables.staticTexts["Food Items"].tap()
+        sleep(1)
+        XCTAssert(app.navigationBars["Food Items"].exists)
+    }
+    
+    func testAddAndDelete() {
+        let app = XCUIApplication()
+        //offline use
+        app.buttons["Use Offline"].tap()
+        //menuNavigation
+        app.navigationBars["Food Items"].buttons["More 50"].tap()
+        app.tables.staticTexts["Goals"].tap()
+        //add goal
+        let before = app.tables.cells.count
+        app.navigationBars["Goals"].buttons["Add"].tap()
+        app.textFields["Enter amount here"].tap()
+        app.textFields["Enter amount here"].typeText("1")
+        XCUIApplication().navigationBars["Add"].buttons["Done"].tap()
+        let after = before + 1
+        XCTAssertEqual(app.tables.cells.count, after)
+        Delete()
+    }
+    
+    func Delete() {
+        let app = XCUIApplication()
+        let before = app.tables.cells.count
+        //delete goal
+        let index = app.tables.cells.count - 1
+        app.tables.cells.element(boundBy: index).swipeLeft()
+        app.tables.cells.element(boundBy: index).buttons["Delete"].tap()
+        let after = before - 1
+        XCTAssertEqual(app.tables.cells.count, after)
+    }
+    
+    func testUserInput() {
+        let app = XCUIApplication()
+        //offline use
+        app.buttons["Use Offline"].tap()
+        //menuNavigation
+        app.navigationBars["Food Items"].buttons["More 50"].tap()
+        app.tables.staticTexts["Goals"].tap()
+        //add goal
+        app.navigationBars["Goals"].buttons["Add"].tap()
+        app.textFields["Enter amount here"].tap()
+        //typed input
+        app.textFields["Enter amount here"].typeText("foo")
+        XCTAssert(app.textFields["foo"].exists)
     }
     
 }

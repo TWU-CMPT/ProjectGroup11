@@ -164,6 +164,8 @@ class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8Tesser
             {
                 //convert translated text into a foodItem
                 let itemToAdd = separate(strin: textView.text)
+                itemToAdd.name = nameText.text!
+                itemToAdd.date = NSDate()
                 itemToAdd.serving = Double(servingValue)!
                 //add foodItem
                 do {
@@ -232,8 +234,6 @@ class AddVC: UIViewController, UITextFieldDelegate, UITextViewDelegate, G8Tesser
         //initialize a foodItem
         let entityFoodItem = NSEntityDescription.entity(forEntityName: "FoodItem", in: managedObjectContext)
         let newItem = NSManagedObject(entity: entityFoodItem!, insertInto: managedObjectContext) as! FoodItem
-        newItem.name = nameText.text!
-        newItem.date = NSDate()
         //array of nutrient strings to look for
         let nutrientNames: [String] = ["Calories", "Fat", "Cholesterol", "Sodium", "Carbohydrate", "Fibre", "Sugars", "Protein", "Vitamin A", "Vitamin C", "Calcium", "Iron", "Potassium"]
         // array of bools to indicate if nutrient was found

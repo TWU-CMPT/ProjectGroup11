@@ -19,13 +19,13 @@
 		D33E7E451E6A99ED00EDFF87 /* TitleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E7E441E6A99ED00EDFF87 /* TitleScreen.swift */; };
 		D33E7E481E6A99ED00EDFF87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D33E7E461E6A99ED00EDFF87 /* Main.storyboard */; };
 		D33E7E4D1E6A99ED00EDFF87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33E7E4C1E6A99ED00EDFF87 /* Assets.xcassets */; };
-		D33E7E5B1E6A99ED00EDFF87 /* SnacTrakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E7E5A1E6A99ED00EDFF87 /* SnacTrakTests.swift */; };
 		D33E7E661E6A99ED00EDFF87 /* SnacTrakUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33E7E651E6A99ED00EDFF87 /* SnacTrakUITests.swift */; };
 		D343F74B1E8DDA41005E8938 /* SnacTrak.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D343F7491E8DDA41005E8938 /* SnacTrak.xcdatamodeld */; };
 		D343F74E1E8DDB0B005E8938 /* Meal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D343F74C1E8DDB0B005E8938 /* Meal+CoreDataClass.swift */; };
 		D343F74F1E8DDB0B005E8938 /* Meal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D343F74D1E8DDB0B005E8938 /* Meal+CoreDataProperties.swift */; };
 		D343F7511E8DEB97005E8938 /* AddMealVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D343F7501E8DEB97005E8938 /* AddMealVC.swift */; };
 		D35BA1C01E6E2D4600386844 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = D35BA1BF1E6E2D4600386844 /* tessdata */; };
+		D365263C1E949EA0002ABF8E /* SnacTrakUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D365263B1E949EA0002ABF8E /* SnacTrakUnitTests.swift */; };
 		D39CE2561E8782E3001170B5 /* FoodItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39CE2521E8782E3001170B5 /* FoodItem+CoreDataClass.swift */; };
 		D39CE2571E8782E3001170B5 /* FoodItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39CE2531E8782E3001170B5 /* FoodItem+CoreDataProperties.swift */; };
 		D39CE2581E8782E3001170B5 /* Nutrient+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39CE2541E8782E3001170B5 /* Nutrient+CoreDataClass.swift */; };
@@ -85,7 +85,6 @@
 		D33E7E4C1E6A99ED00EDFF87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D33E7E511E6A99ED00EDFF87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D33E7E561E6A99ED00EDFF87 /* SnacTrakTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnacTrakTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D33E7E5A1E6A99ED00EDFF87 /* SnacTrakTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnacTrakTests.swift; sourceTree = "<group>"; };
 		D33E7E5C1E6A99ED00EDFF87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D33E7E611E6A99ED00EDFF87 /* SnacTrakUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnacTrakUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D33E7E651E6A99ED00EDFF87 /* SnacTrakUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnacTrakUITests.swift; sourceTree = "<group>"; };
@@ -95,6 +94,8 @@
 		D343F74D1E8DDB0B005E8938 /* Meal+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Meal+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D343F7501E8DEB97005E8938 /* AddMealVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMealVC.swift; sourceTree = "<group>"; };
 		D35BA1BF1E6E2D4600386844 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		D365263B1E949EA0002ABF8E /* SnacTrakUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnacTrakUnitTests.swift; sourceTree = "<group>"; };
+		D36526461E94A6C3002ABF8E /* SnacTrak-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SnacTrak-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		D39CE2521E8782E3001170B5 /* FoodItem+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FoodItem+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D39CE2531E8782E3001170B5 /* FoodItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FoodItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D39CE2541E8782E3001170B5 /* Nutrient+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Nutrient+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -110,7 +111,6 @@
 		D3E0F06D1E7FAE5000F0C0B6 /* AboutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		D3E0F06F1E7FE71200F0C0B6 /* GoalsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalsVC.swift; sourceTree = "<group>"; };
 		D3F150701E6AA1F2004AE54E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
-		D3F150741E6AA366004AE54E /* SnacTrak-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SnacTrak-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +157,7 @@
 		D31B87531E6CF65C00EE6F34 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				D3F150741E6AA366004AE54E /* SnacTrak-Bridging-Header.h */,
+				D36526461E94A6C3002ABF8E /* SnacTrak-Bridging-Header.h */,
 				D3180D541E9242EF007549C6 /* SWRevealViewController.h */,
 				D3180D551E9242FE007549C6 /* SWRevealViewController.m */,
 				D33E7E511E6A99ED00EDFF87 /* Info.plist */,
@@ -212,7 +212,7 @@
 		D33E7E591E6A99ED00EDFF87 /* SnacTrakTests */ = {
 			isa = PBXGroup;
 			children = (
-				D33E7E5A1E6A99ED00EDFF87 /* SnacTrakTests.swift */,
+				D365263B1E949EA0002ABF8E /* SnacTrakUnitTests.swift */,
 				D33E7E5C1E6A99ED00EDFF87 /* Info.plist */,
 			);
 			path = SnacTrakTests;
@@ -602,7 +602,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D33E7E5B1E6A99ED00EDFF87 /* SnacTrakTests.swift in Sources */,
+				D365263C1E949EA0002ABF8E /* SnacTrakUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -738,6 +738,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C55614BC0273A3A1EEE331A6 /* Pods-SnacTrak.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				ENABLE_BITCODE = NO;
@@ -756,6 +757,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4D7F79A23817DF2C64FAF690 /* Pods-SnacTrak.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				ENABLE_BITCODE = NO;
@@ -774,13 +776,15 @@
 			baseConfigurationReference = 2ACE645D2F05D109AA972F76 /* Pods-SnacTrakTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SnacTrakTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TeamBEAR.SnacTrakTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "SnacTrakTests-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SnacTrak.app/SnacTrak";
@@ -792,13 +796,15 @@
 			baseConfigurationReference = 28FE6CBFDDC1AD21CD86E23A /* Pods-SnacTrakTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SnacTrakTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TeamBEAR.SnacTrakTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "SnacTrakTests-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SnacTrak.app/SnacTrak";
 			};
@@ -809,12 +815,14 @@
 			baseConfigurationReference = CAB9BBF53FAE35523F15FC50 /* Pods-SnacTrakUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SnacTrakUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TeamBEAR.SnacTrakUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "SnacTrakUITests-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = SnacTrak;
@@ -826,12 +834,14 @@
 			baseConfigurationReference = 9F21C912FBE3C9806B23D0DE /* Pods-SnacTrakUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SnacTrakUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TeamBEAR.SnacTrakUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "SnacTrakUITests-Bridging-Header.h";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = SnacTrak;
 			};

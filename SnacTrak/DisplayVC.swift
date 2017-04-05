@@ -32,12 +32,12 @@ class DisplayVC: UIViewController {
     
     //create chart
     func setChart() {
-        
         var dataEntries: [ChartDataEntry] = []
         var amounts : [Double] = [(goalArray[gdetails].getNeed(i: gdetails))/goalArray[gdetails].amount * 100, goalArray[gdetails].progress/goalArray[gdetails].amount * 100]
-        var labels : [String] = ["Goal", "Progress"]
+        var labels : [String] = ["Goal (%)", "Progress (%)"]
         var info = ""
-        for i in 0..<2 {
+        for i in 0..<2
+        {
             let dataEntry = PieChartDataEntry(value: amounts[i], label: labels[i])
             dataEntries.append(dataEntry)
         }
@@ -62,7 +62,6 @@ class DisplayVC: UIViewController {
         let ntName = goalArray[gdetails].nutrient
         var units = ""
         var sendtitle = ""
-        
         if ((ntName == "Sodium") || (ntName == "Cholesterol") || (ntName == "Potassium"))
         {
             units = "mg of "
@@ -75,9 +74,8 @@ class DisplayVC: UIViewController {
         {
             units = "g of "
         }
-        
         sendtitle = units + ntName!
-        
         return sendtitle
     }
+    
 }
